@@ -1,57 +1,54 @@
 import '../App.module.css'
-import ReactDOM from 'react-dom/client'
 import {
     Outlet,
     RouterProvider,
-    Link,
     createReactRouter,
     createRouteConfig,
 } from '@tanstack/react-router'
+import Home from './Home'
+import NewGames from './NewGames'
+import PopularGames from './PopularGames'
+import UpcomingGames from './UpcomingGames'
+import Navbar from '../components/organisms/Navbar'
 
 const rootRoute = createRouteConfig({
     component: () => (
         <>
-            <div>
-                <Link to="/">Home</Link> <Link to="/about">About</Link>
-            </div>
-            <hr />
+            <Navbar />
             <Outlet />
         </>
-    )
+    ),
 })
 
-const indexRoute = rootRoute.createRoute({
+const homeRoute = rootRoute.createRoute({
     path: '/',
-    component: Index,
+    component: Home,
 })
 
-const aboutRoute = rootRoute.createRoute({
-    path: '/about',
-    component: About,
+const newGamesRoute = rootRoute.createRoute({
+    path: '/new',
+    component: NewGames,
 })
 
-const routeConfig = rootRoute.addChildren([indexRoute, aboutRoute])
+const popularGamesRoute = rootRoute.createRoute({
+    path: '/popular',
+    component: PopularGames,
+})
+
+const upcomingGamesRoute = rootRoute.createRoute({
+    path: '/upcoming',
+    component: UpcomingGames,
+})
+
+const routeConfig = rootRoute.addChildren([
+    homeRoute,
+    newGamesRoute,
+    popularGamesRoute,
+    upcomingGamesRoute,
+])
 
 const router = createReactRouter({ routeConfig })
 
-export default function App() {
+export default function Router() {
     return <RouterProvider router={router} />
-}
-
-function Index() {
-    return (
-        <div>
-            <h3>Welcome Home!</h3>
-        </div>
-    )
-}
-
-function About() {
-    return <div style={{background:"purple"}}>Hello from About!</div>
-}
-
-const rootElement = document.getElementById('app')
-if (!rootElement.innerHTML) {
-    const root = ReactDOM.createRoot(rootElement)
-    root.render(<App />)
 }
