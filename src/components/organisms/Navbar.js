@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 
-const Navbar = () => {
+export function Navbar() {
     return (
         <nav>
             <Link to={'/'}>Home</Link>
@@ -10,5 +10,3 @@ const Navbar = () => {
         </nav>
     )
 }
-
-export default Navbar

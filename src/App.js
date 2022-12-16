@@ -1,7 +1,6 @@
-import Router from './pages/Router'
+import './App.module.css'
+import { Router } from './routes'
 
-const App = () => {
+export function App() {
     return <Router />
 }
-
-export default App
