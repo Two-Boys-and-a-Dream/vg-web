@@ -1,8 +1,8 @@
-import ReactDOM from 'react-dom/client'
-import Router from './pages/Router'
+import { createRoot } from 'react-dom/client'
+import App from './App'
 
 const rootElement = document.getElementById('app')
 if (!rootElement.innerHTML) {
-    const root = ReactDOM.createRoot(rootElement)
-    root.render(<Router />)
+    const root = createRoot(rootElement)
+    root.render(<App />)
 }

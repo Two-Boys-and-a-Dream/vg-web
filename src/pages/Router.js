@@ -5,7 +5,7 @@ import {
     createReactRouter,
     createRouteConfig,
 } from '@tanstack/react-router'
-import Home from './Home'
+import index from './Home'
 import NewGames from './NewGames'
 import PopularGames from './PopularGames'
 import UpcomingGames from './UpcomingGames'
@@ -22,7 +22,7 @@ const rootRoute = createRouteConfig({
 
 const homeRoute = rootRoute.createRoute({
     path: '/',
-    component: Home,
+    component: index,
 })
 
 const newGamesRoute = rootRoute.createRoute({
