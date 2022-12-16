@@ -1,6 +1,7 @@
 .parcel-cache
 dist
 node_modules
+.idea
 coverage
 .env
 .env.development
