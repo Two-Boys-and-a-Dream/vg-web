@@ -3,8 +3,8 @@ import { App } from '../App'
 
 describe('<App />', () => {
     it('renders', () => {
-        const { getByText } = render(<App />)
+        const root = render(<App />)
 
-        expect(getByText('Hello world!')).toBeDefined()
+        expect(root).toBeDefined()
     })
 })
