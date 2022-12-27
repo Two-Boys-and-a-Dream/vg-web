@@ -1,7 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react'
 import pt from 'prop-types'
 
-export function Rating({ value }) {
+export function Rating({ value = '20' }) {
     return (
         <Flex
             bg={'green'}
@@ -19,5 +19,5 @@ export function Rating({ value }) {
 }
 
 Rating.propTypes = {
-    value: pt.number || pt.string,
+    value: pt.oneOfType([pt.string, pt.number]),
 }
