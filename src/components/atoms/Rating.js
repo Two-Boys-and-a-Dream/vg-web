@@ -1,7 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react'
 import pt from 'prop-types'
 
-export function Rating({ value = '20' }) {
+export function Rating({ value = '0' }) {
     return (
         <Flex
             bg={'green'}
