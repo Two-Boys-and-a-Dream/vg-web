@@ -1,4 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react'
+import { prettyDOM } from '@testing-library/react'
+import pt from 'prop-types'
 
 export function Rating({ value }) {
     return (
@@ -15,4 +17,8 @@ export function Rating({ value }) {
             <Text>{value}</Text>
         </Flex>
     )
+}
+
+Rating.defaultProps = {
+    value: pt.number || pt.string,
 }

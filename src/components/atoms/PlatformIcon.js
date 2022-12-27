@@ -1,4 +1,5 @@
 import { Image } from '@chakra-ui/react'
+import pt from 'prop-types'
 
 export function PlatformIcon({ url }) {
     return (
@@ -9,4 +10,8 @@ export function PlatformIcon({ url }) {
             src={url}
         />
     )
+}
+
+PlatformIcon.defaultProps = {
+    url: pt.string,
 }
