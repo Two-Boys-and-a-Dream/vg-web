@@ -12,6 +12,6 @@ export function PlatformIcon({ url }) {
     )
 }
 
-PlatformIcon.defaultProps = {
+PlatformIcon.propTypes = {
     url: pt.string,
 }
