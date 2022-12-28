@@ -1,18 +1,9 @@
-import {
-    Outlet,
-    createReactRouter,
-    createRouteConfig,
-} from '@tanstack/react-router'
+import { createReactRouter, createRouteConfig } from '@tanstack/react-router'
 import { Home, NewGames, PopularGames, UpcomingGames } from '../pages'
-import { Navbar } from '../components'
+import { Layout } from './Layout'
 
 const rootRoute = createRouteConfig({
-    component: () => (
-        <>
-            <Navbar />
-            <Outlet />
-        </>
-    ),
+    component: Layout,
 })
 
 const homeRoute = rootRoute.createRoute({

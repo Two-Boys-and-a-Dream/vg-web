@@ -3,8 +3,11 @@ import { Link } from '@tanstack/react-router'
 import { ScrollContainer, SectionTitle } from '../atoms'
 import pt from 'prop-types'
 
+/**
+ * Combines the horizontal scroll container, and the title/link above it
+ */
 export function ScrollSection({
-    title,
+    title = 'Default Title',
     linkPath,
     linkText = 'See All',
     children,
