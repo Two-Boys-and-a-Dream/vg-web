@@ -22,7 +22,6 @@ export function ScrollContainer({ horizontal = true, children, ...rest }) {
             direction={horizontal ? 'row' : 'column'}
             spacing={20}
             border="1px"
-            borderColor="blue"
             {...scrollStyles}
             {...rest}
         >
