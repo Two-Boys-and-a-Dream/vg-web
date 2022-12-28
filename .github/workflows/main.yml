@@ -15,9 +15,7 @@ permissions:
 
 jobs:
     Deploy:
-        # pinned to 20.04 due to an issue with Parcel + new ubuntu version + lightningcss
-        # see: https://github.com/parcel-bundler/lightningcss/issues/335
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
               with:
@@ -28,8 +26,10 @@ jobs:
               with:
                   node-version: 16.x
 
+            # goofy wacky fix to get ubuntu across the finish line
+            # see: https://github.com/parcel-bundler/lightningcss/issues/335#issuecomment-1309800954
             - name: Install Packages
-              run: npm install
+              run: npm install lightningcss
 
             - name: Audit
               run: npm audit --audit-level=high

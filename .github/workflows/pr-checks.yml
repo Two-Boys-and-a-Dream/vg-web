@@ -12,8 +12,6 @@ env:
 
 jobs:
     Test_And_Audit:
-        # pinned to 20.04 due to an issue with Parcel + new ubuntu version + lightningcss
-        # see: https://github.com/parcel-bundler/lightningcss/issues/335#issuecomment-1309800954
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
