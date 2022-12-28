@@ -8,11 +8,16 @@ import pt from 'prop-types'
  * Pass in any Chakra prop to style, it will affect the parent div (as ...rest)
  * @see https://chakra-ui.com/docs/styled-system/style-props
  */
-export function ScrollContainer({ horizontal = true, children, ...rest }) {
+export function ScrollContainer({
+    horizontal = true,
+    spacing = '30px',
+    children,
+    ...rest
+}) {
     const scrollStyles = useMemo(
         () => ({
-            overflowX: horizontal ? 'scroll' : 'hidden',
-            overflowY: horizontal ? 'hidden' : 'scroll',
+            overflowX: horizontal ? 'auto' : 'hidden',
+            overflowY: horizontal ? 'hidden' : 'auto',
         }),
         [horizontal]
     )
@@ -20,8 +25,9 @@ export function ScrollContainer({ horizontal = true, children, ...rest }) {
     return (
         <Stack
             direction={horizontal ? 'row' : 'column'}
-            spacing={20}
-            border="1px"
+            spacing={spacing}
+            padding={`${spacing} 0`}
+            mb={spacing}
             {...scrollStyles}
             {...rest}
         >
@@ -32,5 +38,6 @@ export function ScrollContainer({ horizontal = true, children, ...rest }) {
 
 ScrollContainer.propTypes = {
     horizontal: pt.bool,
+    spacing: pt.oneOfType([pt.string, pt.number]),
     children: pt.node,
 }
