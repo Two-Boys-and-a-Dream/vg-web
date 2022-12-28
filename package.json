@@ -30,8 +30,12 @@
     },
     "homepage": "https://github.com/Raymond-Cox/react-boilerplate#readme",
     "dependencies": {
+        "@chakra-ui/react": "^2.4.4",
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
         "@tanstack/react-router": "^0.0.1-beta.38",
         "axios": "0.27.2",
+        "framer-motion": "^7.10.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
