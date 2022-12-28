@@ -24,7 +24,7 @@ jobs:
                   node-version: 16.x
 
             - name: Install Packages
-              run: npm ci --ignore-scripts
+              run: npm ci
 
             - name: Audit
               run: npm audit --audit-level=high
