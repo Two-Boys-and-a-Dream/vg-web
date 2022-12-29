@@ -23,8 +23,10 @@ jobs:
               with:
                   node-version: 16.x
 
+            # goofy wacky fix to get ubuntu across the finish line
+            # see: https://github.com/parcel-bundler/lightningcss/issues/335#issuecomment-1309800954
             - name: Install Packages
-              run: npm ci --ignore-scripts
+              run: npm install lightningcss
 
             - name: Audit
               run: npm audit --audit-level=high
