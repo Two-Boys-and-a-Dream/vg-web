@@ -6,6 +6,7 @@
     "browserslist": "> 0.5%, last 2 versions, not dead",
     "scripts": {
         "start": "parcel --open",
+        "clear-cache": "parcel --open --no-cache",
         "clean": "rmdir /s dist",
         "clean-project": "rmdir /s node_modules",
         "build": "parcel build --public-url ./",
