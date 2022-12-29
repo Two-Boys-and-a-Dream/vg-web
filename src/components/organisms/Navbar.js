@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { VStack, Heading, Text, Flex } from '@chakra-ui/react'
 import { SIZES } from '../../constants'
+import { NewsArticleCard } from '../molecules/'
 
 export function Navbar() {
     return (
@@ -29,9 +30,10 @@ export function Navbar() {
                     <Text fontSize="lg">PopularGames</Text>
                 </Link>
             </VStack>
-            <VStack align="left" p="4">
+            <VStack align="left" p="4" flexGrow="1" overflowY="auto">
                 <Heading size="sm">News</Heading>
                 {/* Map arcticles here */}
+                <NewsArticleCard />
             </VStack>
         </Flex>
     )

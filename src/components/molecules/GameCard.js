@@ -14,7 +14,8 @@ import { PlatformIcon, Rating } from '../index'
  * Displays game information in square card.
  */
 export function GameCard({
-    gameImgUrl = 'https://images.igdb.com/igdb/image/upload/t_cover_big/57339.jpg',
+    // gameImgUrl = 'https://images.igdb.com/igdb/image/upload/t_cover_big/57339.jpg',
+    gameImgUrl = 'https://images.gog-statics.com/0aca7f0078df5a2d3d66a3122be6f93b015e98c1d85b0e5a0a8a75b94c748ce2.jpg',
     platformIcons = [
         'https://images.igdb.com/igdb/image/upload/t_thumb/pl72.jpg',
     ],
@@ -31,7 +32,7 @@ export function GameCard({
             justify="space-between"
             bgImage={`
                 linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-                url(${gameImgUrl}))
+                url(${gameImgUrl})
                 `}
             bgPosition={'center'}
             bgSize={'cover'}
@@ -39,9 +40,7 @@ export function GameCard({
             color="white"
         >
             <CardHeader p="2">
-                <Heading size="md" color="black">
-                    {gameTitle}
-                </Heading>
+                <Heading size="md">{gameTitle}</Heading>
             </CardHeader>
 
             <CardFooter p="2" w="100%">
@@ -55,7 +54,7 @@ export function GameCard({
                                 />
                             ))}
                         </HStack>
-                        <Text color="black">{releaseDate}</Text>
+                        <Text>{releaseDate}</Text>
                     </Flex>
 
                     <Rating value={ratingValue} />
