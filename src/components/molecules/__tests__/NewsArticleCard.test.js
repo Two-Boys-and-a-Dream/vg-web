@@ -4,6 +4,6 @@ import { NewsArticleCard } from '../..'
 describe('<NewsArticleCard />', () => {
     it('renders', () => {
         const { getByTestId } = render(<NewsArticleCard />)
-        expect(getByTestId('news-article-car')).toBeDefined()
+        expect(getByTestId('news-article-card')).toBeDefined()
     })
 })
