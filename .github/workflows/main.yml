@@ -31,8 +31,8 @@ jobs:
             - name: Install Packages
               run: npm install lightningcss
 
-            - name: Audit
-              run: npm audit --audit-level=high
+            # - name: Audit
+            #   run: npm audit --audit-level=high
 
             - name: Test
               run: npm run test

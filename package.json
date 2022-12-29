@@ -1,12 +1,13 @@
 {
-    "name": "react-boilerplate",
+    "name": "vg-web",
     "version": "1.0.0",
-    "description": "A template for React projects using Parcel",
+    "description": "Video Game Website",
     "source": "src/index.html",
     "browserslist": "> 0.5%, last 2 versions, not dead",
     "scripts": {
         "start": "parcel --open",
         "clean": "rmdir /s dist",
+        "clean-project": "rmdir /s node_modules",
         "build": "parcel build --public-url ./",
         "test": "jest",
         "lint": "eslint .",
@@ -16,7 +17,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Raymond-Cox/react-boilerplate.git"
+        "url": "git+https://github.com/Two-Boys-and-a-Dream/vg-web.git"
     },
     "keywords": [
         "React",
@@ -26,9 +27,9 @@
     "author": "Raymond-Cox",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Raymond-Cox/react-boilerplate/issues"
+        "url": "https://github.com/Two-Boys-and-a-Dream/vg-web/issues"
     },
-    "homepage": "https://github.com/Raymond-Cox/react-boilerplate#readme",
+    "homepage": "https://github.com/Two-Boys-and-a-Dream/vg-web#readme",
     "dependencies": {
         "@chakra-ui/react": "^2.4.4",
         "@emotion/react": "^11.10.5",
@@ -47,11 +48,11 @@
         "@testing-library/react": "^13.4.0",
         "@types/jest": "^29.2.4",
         "babel-jest": "^29.3.1",
-        "eslint": "^8.29.0",
+        "eslint": "^8.30.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-config-standard": "^17.0.0",
         "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-jest": "^27.1.6",
+        "eslint-plugin-jest": "^27.1.7",
         "eslint-plugin-n": "^15.6.0",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-react": "^7.31.11",
