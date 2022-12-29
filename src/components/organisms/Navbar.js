@@ -7,7 +7,6 @@ export function Navbar() {
             data-testid="navbar"
             borderRight="1px"
             bg="red"
-            display="flex"
             flexDir="column"
             minW="250px"
             minH="100vh"
