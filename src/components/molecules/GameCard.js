@@ -11,8 +11,8 @@ import {
 import { PlatformIcon, Rating } from '../index'
 
 export function GameCard({
-    gameImgUrl = 'https://images.igdb.com/igdb/image/upload/t_cover_big/57339.jpg',
-    // gameImgUrl = 'https://images.gog-statics.com/0aca7f0078df5a2d3d66a3122be6f93b015e98c1d85b0e5a0a8a75b94c748ce2.jpg',
+    // gameImgUrl = 'https://images.igdb.com/igdb/image/upload/t_cover_big/57339.jpg',
+    gameImgUrl = 'https://images.gog-statics.com/0aca7f0078df5a2d3d66a3122be6f93b015e98c1d85b0e5a0a8a75b94c748ce2.jpg',
     platformIcons = [
         'https://images.igdb.com/igdb/image/upload/t_thumb/pl72.jpg',
     ],
