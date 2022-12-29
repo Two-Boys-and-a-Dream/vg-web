@@ -1,5 +1,7 @@
 'use strict'
 
+jest.mock('axios')
+
 jest.mock('@tanstack/react-router', () => {
     const actual = jest.requireActual('@tanstack/react-router')
     const mocked = jest.createMockFromModule('@tanstack/react-router')
@@ -16,3 +18,5 @@ jest.mock('@tanstack/react-router', () => {
         Outlet: mocked.Outlet,
     }
 })
+
+process.env.API_URL = 'https://test.com/'

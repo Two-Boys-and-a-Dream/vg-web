@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { VStack, Heading, Text, Flex } from '@chakra-ui/react'
+import { SIZES } from '../../constants'
 import { NewsArticleCard } from '../molecules/'
 
 export function Navbar() {
@@ -9,7 +10,7 @@ export function Navbar() {
             borderRight="1px"
             bg="red"
             flexDir="column"
-            minW="250px"
+            minW={SIZES.navbarWidth}
             minH="100vh"
         >
             <Heading size="lg" borderBottom="2px" textAlign="center" p="4">
