@@ -1,23 +1,25 @@
 import pt from 'prop-types'
 import {
-    Box,
     Card,
     CardFooter,
     CardHeader,
+    Flex,
     Heading,
     HStack,
     Text,
 } from '@chakra-ui/react'
 import { PlatformIcon, Rating } from '../index'
 
+/**
+ * Displays game information in square card.
+ */
 export function GameCard({
     gameImgUrl = 'https://images.igdb.com/igdb/image/upload/t_cover_big/57339.jpg',
-    // gameImgUrl = 'https://images.gog-statics.com/0aca7f0078df5a2d3d66a3122be6f93b015e98c1d85b0e5a0a8a75b94c748ce2.jpg',
     platformIcons = [
         'https://images.igdb.com/igdb/image/upload/t_thumb/pl72.jpg',
     ],
     ratingValue = '93',
-    gameTitle = 'Omega Long Game Title of Hell',
+    gameTitle = 'Omega Long Game Title',
     releaseDate = '12/22/22',
 }) {
     return (
@@ -36,27 +38,28 @@ export function GameCard({
             bgRepeat={'no-repeat'}
             color="white"
         >
-            <CardHeader p="2" w="inherit">
-                <Heading size="md">{gameTitle}</Heading>
+            <CardHeader p="2">
+                <Heading size="md" color="black">
+                    {gameTitle}
+                </Heading>
             </CardHeader>
-            <CardFooter
-                p="2"
-                w="inherit"
-                display={'flex'}
-                justify={'space-between'}
-            >
-                <Box>
-                    <HStack>
-                        {platformIcons.map((platformUrl, index) => (
-                            <PlatformIcon
-                                key={`platform-icon - ${index}`}
-                                url={platformUrl}
-                            />
-                        ))}
-                    </HStack>
-                    <Text>{releaseDate}</Text>
-                </Box>
-                <Rating value={ratingValue} />
+
+            <CardFooter p="2" w="100%">
+                <Flex justify="space-between" w="100%">
+                    <Flex direction="column">
+                        <HStack>
+                            {platformIcons.map((platformUrl, index) => (
+                                <PlatformIcon
+                                    key={`platform-icon - ${index}`}
+                                    url={platformUrl}
+                                />
+                            ))}
+                        </HStack>
+                        <Text color="black">{releaseDate}</Text>
+                    </Flex>
+
+                    <Rating value={ratingValue} />
+                </Flex>
             </CardFooter>
         </Card>
     )

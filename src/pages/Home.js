@@ -1,20 +1,15 @@
 import { Flex } from '@chakra-ui/react'
-import { GameCard, ScrollSection } from '../components'
+import { QUERIES } from '../api'
+import { ScrollCategory } from '../components'
 
 export function Home() {
     return (
         <Flex direction="column" p="50px">
-            <ScrollSection title="New Releases" linkPath="new">
-                {Array.from(Array(40)).map((_item, index) => (
-                    <GameCard key={index} />
-                ))}
-            </ScrollSection>
-
-            <ScrollSection title="Popular" linkPath="popular">
-                {Array.from(Array(40)).map((_item, index) => (
-                    <GameCard key={index} />
-                ))}
-            </ScrollSection>
+            <ScrollCategory
+                title="New Releases"
+                linkPath="new"
+                queryName={QUERIES.NEW_GAMES_LIGHT}
+            />
         </Flex>
     )
 }

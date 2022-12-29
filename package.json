@@ -38,7 +38,8 @@
         "axios": "0.27.2",
         "framer-motion": "^7.10.2",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-query": "^3.39.2"
     },
     "devDependencies": {
         "@babel/core": "^7.20.5",
@@ -48,6 +49,7 @@
         "@testing-library/react": "^13.4.0",
         "@types/jest": "^29.2.4",
         "babel-jest": "^29.3.1",
+        "buffer": "^5.7.1",
         "eslint": "^8.30.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-config-standard": "^17.0.0",
