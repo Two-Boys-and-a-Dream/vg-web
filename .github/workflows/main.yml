@@ -40,6 +40,10 @@ jobs:
             - name: SonarCloud Scan
               uses: SonarSource/sonarcloud-github-action@master
 
+            - name: Create env file
+              run: |
+                  echo "${{ secrets.ENV_FILE_PROD }}" > .env
+
             - name: Build 🔧
               run: npm run build
 
