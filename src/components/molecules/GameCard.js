@@ -29,7 +29,7 @@ export function GameCard({
             justify="space-between"
             bgImage={`
                 linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-                url(${gameImgUrl}))
+                url(${gameImgUrl})
                 `}
             bgPosition={'center'}
             bgSize={'cover'}
@@ -41,7 +41,7 @@ export function GameCard({
             </CardHeader>
             <CardFooter
                 p="2"
-                w="inherit"
+                w="100%"
                 display={'flex'}
                 justify={'space-between'}
             >
