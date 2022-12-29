@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react'
-import { Home } from '../Home'
+import { Layout } from '../Layout'
 
-describe('<Home />', () => {
+describe('<Layout />', () => {
     it('renders', () => {
-        const root = render(<Home />)
+        const root = render(<Layout />)
+
         expect(root).toBeDefined()
     })
 })

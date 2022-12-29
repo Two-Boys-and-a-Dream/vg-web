@@ -1,11 +1,12 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import './App.module.css'
-import { Router } from './routes'
+import { router } from './routes/Router'
+import { RouterProvider } from '@tanstack/react-router'
 
 export function App() {
     return (
         <ChakraProvider>
-            <Router />
+            <RouterProvider router={router} />
         </ChakraProvider>
     )
 }

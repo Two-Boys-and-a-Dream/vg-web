@@ -23,8 +23,8 @@ export function GameCard({
     return (
         <Card
             data-testid="game-card"
-            w={'250px'}
-            h={'250px'}
+            minW={'250px'}
+            minH={'250px'}
             align="flex-start"
             justify="space-between"
             bgImage={`

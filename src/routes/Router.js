@@ -1,19 +1,9 @@
-import {
-    Outlet,
-    RouterProvider,
-    createReactRouter,
-    createRouteConfig,
-} from '@tanstack/react-router'
+import { createReactRouter, createRouteConfig } from '@tanstack/react-router'
 import { Home, NewGames, PopularGames, UpcomingGames } from '../pages'
-import { Navbar } from '../components'
+import { Layout } from './Layout'
 
 const rootRoute = createRouteConfig({
-    component: () => (
-        <>
-            <Navbar />
-            <Outlet />
-        </>
-    ),
+    component: Layout,
 })
 
 const homeRoute = rootRoute.createRoute({
@@ -43,8 +33,4 @@ const routeConfig = rootRoute.addChildren([
     upcomingGamesRoute,
 ])
 
-const router = createReactRouter({ routeConfig })
-
-export function Router() {
-    return <RouterProvider router={router} />
-}
+export const router = createReactRouter({ routeConfig })
