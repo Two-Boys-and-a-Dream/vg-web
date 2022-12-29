@@ -1,3 +1,4 @@
+import { Flex } from '@chakra-ui/layout'
 import { Outlet } from '@tanstack/react-router'
 import { Navbar } from '../components'
 
@@ -7,9 +8,9 @@ import { Navbar } from '../components'
  */
 export function Layout() {
     return (
-        <>
+        <Flex>
             <Navbar />
             <Outlet />
-        </>
+        </Flex>
     )
 }
