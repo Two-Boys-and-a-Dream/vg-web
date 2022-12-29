@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { QUERY } from '../../api'
+import { QUERIES, QUERY } from '../../api'
 import { Loader } from '../atoms'
 import { GameCard, ScrollSection } from '../molecules'
 import pt from 'prop-types'
@@ -9,7 +9,11 @@ import pt from 'prop-types'
  * to hook into a query key.
  * @see {@link QUERY}
  */
-export function ScrollCategory({ title = 'Games', linkPath, queryName }) {
+export function ScrollCategory({
+    title = 'Games',
+    linkPath,
+    queryName = QUERIES.NEW_GAMES_LIGHT,
+}) {
     const { key, fn } = QUERY[queryName]
     const { data, isLoading } = useQuery(key, fn)
 
@@ -36,7 +40,7 @@ export function ScrollCategory({ title = 'Games', linkPath, queryName }) {
 }
 
 ScrollCategory.propTypes = {
-    title: pt.string.isRequired,
+    title: pt.string,
     linkPath: pt.string,
-    queryName: pt.string.isRequired,
+    queryName: pt.string,
 }
