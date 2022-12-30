@@ -9,55 +9,59 @@ import {
     Text,
 } from '@chakra-ui/react'
 import { PlatformIcon, Rating } from '../index'
+import { constructImgURL } from '../../utils'
+import { IMAGE_SIZES } from '../../utils/images'
 
 /**
  * Displays game information in square card.
  */
 export function GameCard({
-    // gameImgUrl = 'https://images.igdb.com/igdb/image/upload/t_cover_big/57339.jpg',
-    gameImgUrl = 'https://images.gog-statics.com/0aca7f0078df5a2d3d66a3122be6f93b015e98c1d85b0e5a0a8a75b94c748ce2.jpg',
-    platformIcons = [
-        'https://images.igdb.com/igdb/image/upload/t_thumb/pl72.jpg',
-    ],
-    ratingValue = '93',
+    imageId,
+    platformIds = [],
+    rating,
     gameTitle = 'Omega Long Game Title',
     releaseDate = '12/22/22',
 }) {
     return (
         <Card
             data-testid="game-card"
-            minW={'250px'}
-            minH={'250px'}
+            minW="250px"
+            minH="250px"
             align="flex-start"
             justify="space-between"
             bgImage={`
-                linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-                url(${gameImgUrl})
+                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+                url(${constructImgURL(imageId)})
                 `}
-            bgPosition={'center'}
-            bgSize={'cover'}
-            bgRepeat={'no-repeat'}
+            bgPosition="center"
+            bgSize="cover"
+            bgRepeat="no-repeat"
             color="white"
+            // Only added temporarily to hide platform icons that flow over edge
+            overflow="hidden"
         >
             <CardHeader p="2">
                 <Heading size="md">{gameTitle}</Heading>
             </CardHeader>
 
             <CardFooter p="2" w="100%">
-                <Flex justify="space-between" w="100%">
+                <Flex justify="space-between" align="flex-end" w="100%">
                     <Flex direction="column">
                         <HStack>
-                            {platformIcons.map((platformUrl, index) => (
+                            {platformIds.map((pId, index) => (
                                 <PlatformIcon
                                     key={`platform-icon - ${index}`}
-                                    url={platformUrl}
+                                    url={constructImgURL(
+                                        pId,
+                                        IMAGE_SIZES.thumb
+                                    )}
                                 />
                             ))}
                         </HStack>
                         <Text>{releaseDate}</Text>
                     </Flex>
 
-                    <Rating value={ratingValue} />
+                    <Rating value={rating} />
                 </Flex>
             </CardFooter>
         </Card>
@@ -65,9 +69,9 @@ export function GameCard({
 }
 
 GameCard.propTypes = {
-    gameImgUrl: pt.string,
-    platformIcons: pt.arrayOf(pt.string),
-    ratingValue: pt.oneOfType([pt.string, pt.number]),
+    imageId: pt.string.isRequired,
+    platformIds: pt.arrayOf(pt.string),
+    rating: pt.oneOfType([pt.string, pt.number]),
     gameTitle: pt.string,
     releaseDate: pt.string,
 }

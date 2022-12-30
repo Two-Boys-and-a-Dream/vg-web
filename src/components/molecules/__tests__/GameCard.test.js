@@ -3,7 +3,7 @@ import { GameCard } from '../GameCard'
 
 describe('<GameCard />', () => {
     it('renders', () => {
-        const { getByTestId } = render(<GameCard />)
+        const { getByTestId } = render(<GameCard imageId="123" />)
         expect(getByTestId('game-card')).toBeDefined()
     })
 })

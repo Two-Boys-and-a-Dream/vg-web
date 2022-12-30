@@ -22,8 +22,7 @@
     },
     "keywords": [
         "React",
-        "Template",
-        "Boilerplate"
+        "Video Games"
     ],
     "author": "Raymond-Cox",
     "license": "MIT",
@@ -47,6 +46,7 @@
         "@babel/preset-react": "^7.18.6",
         "@parcel/babel-plugin-transform-runtime": "^2.8.1",
         "@parcel/babel-preset-env": "^2.8.1",
+        "@tanstack/eslint-plugin-query": "^4.20.8",
         "@testing-library/react": "^13.4.0",
         "@types/jest": "^29.2.4",
         "babel-jest": "^29.3.1",

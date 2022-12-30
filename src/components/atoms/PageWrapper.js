@@ -4,7 +4,12 @@ import pt from 'prop-types'
 
 export function PageWrapper({ children }) {
     return (
-        <Flex direction="column" p={SIZES.pagePadding} maxW={SIZES.pageWidth}>
+        <Flex
+            direction="column"
+            p={SIZES.pagePadding}
+            maxW={SIZES.pageWidth}
+            marginLeft={SIZES.navbarWidth}
+        >
             {children}
         </Flex>
     )

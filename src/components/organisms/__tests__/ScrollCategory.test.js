@@ -7,7 +7,17 @@ const data = [
     {
         id: '1',
         name: 'game one',
-        release_dates: [{ human: '12/02/22' }, { human: '12/24/22' }],
+        cover: {
+            image_id: '100',
+        },
+        total_rating: 55,
+        release_dates: [
+            {
+                human: '12/02/22',
+                platform: { platform_logo: { image_id: '55' } },
+            },
+            { human: '12/24/22' },
+        ],
     },
 ]
 

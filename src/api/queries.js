@@ -6,6 +6,8 @@ import { request } from './request'
  */
 export const QUERIES = {
     NEW_GAMES_LIGHT: 'new_games_light',
+    UPCOMING_GAMES_LIGHT: 'upcoming_games_light',
+    POPULAR_GAMES_LIGHT: 'popular_games_light',
 }
 
 /**
@@ -16,7 +18,15 @@ export const QUERIES = {
  */
 export const QUERY = {
     [QUERIES.NEW_GAMES_LIGHT]: {
-        key: QUERIES.NEW_GAMES_LIGHT,
+        key: [QUERIES.NEW_GAMES_LIGHT],
         fn: () => request('games/new'),
+    },
+    [QUERIES.UPCOMING_GAMES_LIGHT]: {
+        key: [QUERIES.UPCOMING_GAMES_LIGHT],
+        fn: () => request('games/upcoming'),
+    },
+    [QUERIES.POPULAR_GAMES_LIGHT]: {
+        key: [QUERIES.POPULAR_GAMES_LIGHT],
+        fn: () => request('games/popular'),
     },
 }

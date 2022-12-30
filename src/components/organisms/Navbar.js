@@ -8,10 +8,11 @@ export function Navbar() {
         <Flex
             data-testid="navbar"
             borderRight="1px"
-            bg="red"
-            flexDir="column"
-            minW={SIZES.navbarWidth}
+            bg="lightgrey"
+            direction="column"
+            w={SIZES.navbarWidth}
             minH="100vh"
+            position="fixed"
         >
             <Heading size="lg" borderBottom="2px" textAlign="center" p="4">
                 Video Gaming
