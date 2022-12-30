@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 
 export function Rating({ value = '?' }) {
     const text = useMemo(
-        () => (isNaN(value) ? value : Math.round(value)),
+        () => (typeof value === 'number' ? Math.round(value) : value),
         [value]
     )
 
