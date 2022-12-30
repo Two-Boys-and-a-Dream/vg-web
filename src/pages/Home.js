@@ -9,6 +9,16 @@ export function Home() {
                 linkPath="new"
                 queryName={QUERIES.NEW_GAMES_LIGHT}
             />
+            <ScrollCategory
+                title="Popular Games"
+                linkPath="popular"
+                queryName={QUERIES.POPULAR_GAMES_LIGHT}
+            />
+            <ScrollCategory
+                title="Upcoming Games"
+                linkPath="upcoming"
+                queryName={QUERIES.UPCOMING_GAMES_LIGHT}
+            />
         </PageWrapper>
     )
 }

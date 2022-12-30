@@ -5,9 +5,8 @@ export function PlatformIcon({ url = 'missing icon' }) {
     return (
         <Image
             data-testid="platform-icon"
-            boxSize={'25px'}
-            borderRadius={'full'}
-            objectFit={'cover'}
+            boxSize={'40px'}
+            borderRadius={'5px'}
             src={url}
         />
     )
