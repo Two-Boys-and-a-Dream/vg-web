@@ -69,7 +69,7 @@ export function GameCard({
 }
 
 GameCard.propTypes = {
-    imageId: pt.string.isRequired,
+    imageId: pt.string,
     platformIds: pt.arrayOf(pt.string),
     rating: pt.oneOfType([pt.string, pt.number]),
     gameTitle: pt.string,

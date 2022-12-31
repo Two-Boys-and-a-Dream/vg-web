@@ -35,7 +35,7 @@ export function ScrollCategory({
                     gameTitle={d.name}
                     releaseDate={newestDate}
                     rating={d.total_rating}
-                    imageId={d.cover.image_id}
+                    imageId={d.cover?.image_id}
                     platformIds={uniquePlatforms}
                 />
             )
