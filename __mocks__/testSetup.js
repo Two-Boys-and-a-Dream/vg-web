@@ -2,9 +2,9 @@
 
 jest.mock('axios')
 
-jest.mock('@tanstack/react-router', () => {
-    const actual = jest.requireActual('@tanstack/react-router')
-    const mocked = jest.createMockFromModule('@tanstack/react-router')
+jest.mock('react-router-dom', () => {
+    const actual = jest.requireActual('react-router-dom')
+    const mocked = jest.createMockFromModule('react-router-dom')
 
     // Make link just pass through
     function Link({ children }) {
