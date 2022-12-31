@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/layout'
-import { Outlet } from '@tanstack/react-router'
+import { Outlet } from 'react-router-dom'
 import { Navbar } from '../components'
 
 /**

@@ -1,5 +1,5 @@
 import { Flex, Link as ChakraLink } from '@chakra-ui/react'
-import { Link } from '@tanstack/react-router'
+import { Link } from 'react-router-dom'
 import { ScrollContainer, SectionTitle } from '../atoms'
 import pt from 'prop-types'
 
