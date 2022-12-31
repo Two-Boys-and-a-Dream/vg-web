@@ -1,4 +1,4 @@
-import { Link } from '@tanstack/react-router'
+import { Link } from 'react-router-dom'
 import { VStack, Heading, Text, Flex } from '@chakra-ui/react'
 import { SIZES } from '../../constants'
 import { NewsArticleCard } from '../molecules/'
