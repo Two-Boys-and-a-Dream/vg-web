@@ -1,4 +1,3 @@
-// import { createBrowserRouter } from 'react-router-dom'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home, NewGames, PopularGames, UpcomingGames } from '../pages'
 import { Layout } from './Layout'
