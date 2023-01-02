@@ -4,7 +4,11 @@ import { Layout } from './Layout'
 
 export function Router() {
     return (
-        <BrowserRouter>
+        <BrowserRouter
+            basename={
+                process.env.NODE_ENV === 'development' ? undefined : '/vg-web/'
+            }
+        >
             <Routes>
                 <Route element={<Layout />}>
                     <Route path="/" element={<Home />} />
