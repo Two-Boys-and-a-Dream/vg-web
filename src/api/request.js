@@ -7,9 +7,8 @@ import axios from 'axios'
  * @returns {Promise<Array>} data
  */
 export async function request(endpoint = '', headers = {}) {
-    const { API_URL } = process.env
+    const url = process.env.API_URL + endpoint
 
-    const url = API_URL + endpoint
     const result = await axios.get(url, headers)
 
     return result.data
