@@ -8,6 +8,7 @@ export const QUERIES = {
     NEW_GAMES_LIGHT: 'new_games_light',
     UPCOMING_GAMES_LIGHT: 'upcoming_games_light',
     POPULAR_GAMES_LIGHT: 'popular_games_light',
+    RECENT_NEWS: 'recent_news',
 }
 
 /**
@@ -28,5 +29,9 @@ export const QUERY = {
     [QUERIES.POPULAR_GAMES_LIGHT]: {
         key: [QUERIES.POPULAR_GAMES_LIGHT],
         fn: () => request('games/popular'),
+    },
+    [QUERIES.RECENT_NEWS]: {
+        key: [QUERIES.RECENT_NEWS],
+        fn: () => request('news/recent'),
     },
 }
