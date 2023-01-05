@@ -1,9 +1,13 @@
-import { render } from '@testing-library/react'
+import { waitFor } from '@testing-library/react'
 import { Navbar } from '../'
+import { renderWithClient } from '../../../utils/testUtils'
 
 describe('<Navbar />', () => {
-    it('renders', () => {
-        const { getByTestId } = render(<Navbar />)
-        expect(getByTestId('navbar')).toBeDefined()
+    it('renders', async () => {
+        const { getByTestId } = renderWithClient(<Navbar />)
+
+        await waitFor(() => {
+            expect(getByTestId('navbar')).toBeDefined()
+        })
     })
 })

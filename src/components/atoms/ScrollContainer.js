@@ -18,6 +18,9 @@ export function ScrollContainer({
         () => ({
             overflowX: horizontal ? 'auto' : 'hidden',
             overflowY: horizontal ? 'hidden' : 'auto',
+            padding: horizontal
+                ? `${spacing} 0`
+                : `${spacing} 5px ${spacing} 0`,
         }),
         [horizontal]
     )
@@ -26,7 +29,6 @@ export function ScrollContainer({
         <Stack
             direction={horizontal ? 'row' : 'column'}
             spacing={spacing}
-            padding={`${spacing} 0`}
             mb={spacing}
             {...scrollStyles}
             {...rest}
