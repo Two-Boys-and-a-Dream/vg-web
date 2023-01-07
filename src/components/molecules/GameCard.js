@@ -21,8 +21,9 @@ export function GameCard({
             color="white"
             minW="325px"
             maxW="325px"
+            minH="325px"
             gap="2"
-            bg="black"
+            bg="#161616"
             p="2"
         >
             <Image src={constructImgURL(imageId)} w="100%" h="200px" />
@@ -30,23 +31,18 @@ export function GameCard({
                 <Rating value={rating} />
                 <VStack align="flex-start">
                     <Heading
-                        w="225px"
                         size="md"
                         whiteSpace="nowrap"
-                        overflow="hidden"
+                        overflow="clip"
                         textOverflow="ellipsis"
+                        w="250px"
                     >
                         {gameTitle}
                     </Heading>
-                    <Text>{releaseDate}</Text>
+                    <Text fontSize="sm">{releaseDate}</Text>
                 </VStack>
             </HStack>
-            <Text
-                h="100px"
-                whiteSpace="normal"
-                overflow="hidden"
-                textOverflow="ellipsis"
-            >
+            <Text h="100px" overflow="hidden" textOverflow="ellipsis">
                 {summary}
             </Text>
         </Card>
