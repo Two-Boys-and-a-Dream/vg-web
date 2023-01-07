@@ -13,7 +13,7 @@ export function Rating({ value = '?' }) {
             bg={'green'}
             h="50px"
             minW="50px"
-            borderRadius={'50%'}
+            borderRadius={'20%'}
             justify={'center'}
             align={'center'}
         >
