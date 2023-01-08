@@ -14,12 +14,12 @@ export function NewsContainer() {
     return (
         <ScrollContainer horizontal={false}>
             {data?.map(({ _id, title, image, link }) => (
-               <NewsArticleCard
-                  key={_id}
-                  title={title}
-                  thumbnail={image}
-                  link={link}
-               />
+                <NewsArticleCard
+                    key={_id}
+                    title={title}
+                    thumbnail={image}
+                    link={link}
+                />
             ))}
         </ScrollContainer>
     )
