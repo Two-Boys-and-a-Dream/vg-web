@@ -8,12 +8,25 @@ export function Rating({ value = '?' }) {
         [value]
     )
 
+    const bgColor = useMemo(() => {
+        if (typeof value !== 'number') return 'grey'
+
+        switch (true) {
+            case value >= 75:
+                return 'green'
+            case value >= 50:
+                return 'yellow'
+            default:
+                return 'red'
+        }
+    }, [value])
+
     return (
         <Flex
-            bg={'green'}
+            bg={bgColor}
             h="50px"
             minW="50px"
-            borderRadius={'50%'}
+            borderRadius={'20%'}
             justify={'center'}
             align={'center'}
         >

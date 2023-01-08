@@ -1,76 +1,57 @@
 import pt from 'prop-types'
-import {
-    Card,
-    CardFooter,
-    CardHeader,
-    Flex,
-    Heading,
-    HStack,
-    Text,
-} from '@chakra-ui/react'
-import { PlatformIcon, Rating } from '../index'
+import { Card, Heading, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import { constructImgURL } from '../../utils'
-import { IMAGE_SIZES } from '../../utils/images'
+import { Rating } from '../atoms'
 
 /**
  * Displays game information in square card.
  */
 export function GameCard({
     imageId,
-    platformIds = [],
+    summary = 'Missing summary data',
     rating,
     gameTitle = 'Omega Long Game Title',
     releaseDate = '12/22/22',
 }) {
     return (
+        // Setting width not working as intended.
+        // For some reason it only works with minW
         <Card
             data-testid="game-card"
-            minW="250px"
-            minH="250px"
-            align="flex-start"
-            justify="space-between"
-            bgImage={`
-                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
-                url(${constructImgURL(imageId)})
-                `}
-            bgPosition="center"
-            bgSize="cover"
-            bgRepeat="no-repeat"
             color="white"
-            // Only added temporarily to hide platform icons that flow over edge
-            overflow="hidden"
+            minW="325px"
+            maxW="325px"
+            minH="325px"
+            gap="2"
+            bg="#161616"
+            p="2"
         >
-            <CardHeader p="2">
-                <Heading size="md">{gameTitle}</Heading>
-            </CardHeader>
-
-            <CardFooter p="2" w="100%">
-                <Flex justify="space-between" align="flex-end" w="100%">
-                    <Flex direction="column">
-                        <HStack>
-                            {platformIds.map((pId, index) => (
-                                <PlatformIcon
-                                    key={`platform-icon - ${index}`}
-                                    url={constructImgURL(
-                                        pId,
-                                        IMAGE_SIZES.thumb
-                                    )}
-                                />
-                            ))}
-                        </HStack>
-                        <Text>{releaseDate}</Text>
-                    </Flex>
-
-                    <Rating value={rating} />
-                </Flex>
-            </CardFooter>
+            <Image src={constructImgURL(imageId)} w="100%" h="200px" />
+            <HStack>
+                <Rating value={rating} />
+                <VStack align="flex-start">
+                    <Heading
+                        size="md"
+                        whiteSpace="nowrap"
+                        overflow="clip"
+                        textOverflow="ellipsis"
+                        w="250px"
+                    >
+                        {gameTitle}
+                    </Heading>
+                    <Text fontSize="sm">{releaseDate}</Text>
+                </VStack>
+            </HStack>
+            <Text h="100px" overflow="hidden" textOverflow="ellipsis">
+                {summary}
+            </Text>
         </Card>
     )
 }
 
 GameCard.propTypes = {
     imageId: pt.string,
-    platformIds: pt.arrayOf(pt.string),
+    summary: pt.string,
     rating: pt.oneOfType([pt.string, pt.number]),
     gameTitle: pt.string,
     releaseDate: pt.string,

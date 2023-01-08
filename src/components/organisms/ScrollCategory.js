@@ -21,14 +21,6 @@ export function ScrollCategory({
         return data?.map((d) => {
             const newestDate = d.release_dates[d.release_dates.length - 1].human
 
-            // map platform ids to simple array of strings
-            const platformIds = d.release_dates.map(
-                (datum) => datum.platform?.platform_logo?.image_id
-            )
-
-            // remove undefined and duplicate values
-            const uniquePlatforms = [...new Set(platformIds.filter(Boolean))]
-
             return (
                 <GameCard
                     key={d.id}
@@ -36,7 +28,7 @@ export function ScrollCategory({
                     releaseDate={newestDate}
                     rating={d.total_rating}
                     imageId={d.cover?.image_id}
-                    platformIds={uniquePlatforms}
+                    summary={d.summary}
                 />
             )
         })
