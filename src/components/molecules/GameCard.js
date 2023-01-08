@@ -21,7 +21,6 @@ export function GameCard({
             color="white"
             minW="325px"
             maxW="325px"
-            minH="325px"
             gap="2"
             bg="#161616"
             p="2"
