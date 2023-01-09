@@ -1,6 +1,6 @@
 import { Flex } from '@chakra-ui/layout'
 import { Outlet } from 'react-router-dom'
-import { Navbar } from '../components'
+import { Navbar, PageWrapper } from '../components'
 
 /**
  * Main component used in @tanstack/react-router
@@ -10,7 +10,9 @@ export function Layout() {
     return (
         <Flex>
             <Navbar />
-            <Outlet />
+            <PageWrapper>
+                <Outlet />
+            </PageWrapper>
         </Flex>
     )
 }

@@ -1,9 +1,9 @@
 import { QUERIES } from '../api'
-import { PageWrapper, ScrollCategory } from '../components'
+import { ScrollCategory } from '../components'
 
 export function Home() {
     return (
-        <PageWrapper>
+        <>
             <ScrollCategory
                 title="New Releases"
                 linkPath="new"
@@ -19,6 +19,6 @@ export function Home() {
                 linkPath="upcoming"
                 queryName={QUERIES.UPCOMING_GAMES_LIGHT}
             />
-        </PageWrapper>
+        </>
     )
 }
