@@ -2,18 +2,10 @@ import { NewsContainer } from '../NewsContainer'
 import { waitFor } from '@testing-library/react'
 import { renderWithClient } from '../../../utils/testUtils'
 import axios from 'axios'
-
-const data = [
-    {
-        _id: '1',
-        title: 'article one',
-        link: 'somewhere.test.com',
-        image: '//someUri',
-    },
-]
+import { FAKE_NEWS } from '../../../data/dummy-data'
 
 beforeEach(() => {
-    axios.get.mockResolvedValue({ data })
+    axios.get.mockResolvedValue({ data: FAKE_NEWS })
 })
 
 describe('<NewsContainer />', () => {
