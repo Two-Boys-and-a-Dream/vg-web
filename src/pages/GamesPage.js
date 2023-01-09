@@ -32,12 +32,7 @@ export function GamesPage({
     return (
         <VStack gap="2">
             <Heading alignSelf="flex-start">{title}</Heading>
-            <HStack
-                flexWrap={'wrap'}
-                justify="stretch"
-                align="flex-start"
-                gap="6"
-            >
+            <HStack flexWrap="wrap" justify="space-evenly" gap="6">
                 {isLoading ? <Loader /> : _renderData()}
             </HStack>
         </VStack>
