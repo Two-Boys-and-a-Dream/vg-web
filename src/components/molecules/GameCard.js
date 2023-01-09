@@ -14,14 +14,11 @@ export function GameCard({
     releaseDate = '12/22/22',
 }) {
     return (
-        // Setting width not working as intended.
-        // For some reason it only works with minW
         <Card
             data-testid="game-card"
             color="white"
             minW="325px"
             maxW="325px"
-            minH="325px"
             gap="2"
             bg="#161616"
             p="2"

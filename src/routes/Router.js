@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Home, NewGames, PopularGames, UpcomingGames } from '../pages'
+import { QUERIES } from '../api'
+import { GamesPage, Home } from '../pages'
 import { getRouterBasename } from '../utils/utils'
 import { Layout } from './Layout'
 
@@ -12,9 +13,33 @@ export function Router() {
             <Routes>
                 <Route element={<Layout />}>
                     <Route path="/" element={<Home />} />
-                    <Route path="/new" element={<NewGames />} />
-                    <Route path="/upcoming" element={<UpcomingGames />} />
-                    <Route path="/popular" element={<PopularGames />} />
+                    <Route
+                        path="new"
+                        element={
+                            <GamesPage
+                                title="New Games"
+                                queryName={QUERIES.NEW_GAMES_LIGHT}
+                            />
+                        }
+                    />
+                    <Route
+                        path="upcoming"
+                        element={
+                            <GamesPage
+                                title="Upcoming Games"
+                                queryName={QUERIES.UPCOMING_GAMES_LIGHT}
+                            />
+                        }
+                    />
+                    <Route
+                        path="popular"
+                        element={
+                            <GamesPage
+                                title="Popular Games"
+                                queryName={QUERIES.POPULAR_GAMES_LIGHT}
+                            />
+                        }
+                    />
                 </Route>
             </Routes>
         </BrowserRouter>
