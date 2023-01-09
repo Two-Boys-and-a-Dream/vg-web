@@ -2,7 +2,7 @@ import { useQuery } from 'react-query'
 import { QUERIES, QUERY } from '../api'
 import { Heading, HStack, VStack } from '@chakra-ui/react'
 import { GameCard } from '../components'
-import { Loader, PageWrapper } from '../components/atoms'
+import { Loader } from '../components/atoms'
 import pt from 'prop-types'
 
 export function GamesPage({
@@ -30,19 +30,17 @@ export function GamesPage({
     }
 
     return (
-        <PageWrapper>
-            <VStack gap="2">
-                <Heading alignSelf="flex-start">{title}</Heading>
-                <HStack
-                    flexWrap={'wrap'}
-                    justify="stretch"
-                    align="flex-start"
-                    gap="6"
-                >
-                    {isLoading ? <Loader /> : _renderData()}
-                </HStack>
-            </VStack>
-        </PageWrapper>
+        <VStack gap="2">
+            <Heading alignSelf="flex-start">{title}</Heading>
+            <HStack
+                flexWrap={'wrap'}
+                justify="stretch"
+                align="flex-start"
+                gap="6"
+            >
+                {isLoading ? <Loader /> : _renderData()}
+            </HStack>
+        </VStack>
     )
 }
 
