@@ -30,7 +30,9 @@ export function Rating({ value = '?' }) {
             justify={'center'}
             align={'center'}
         >
-            <Text>{text}</Text>
+            <Text color="black" fontWeight="bold" fontSize="xl">
+                {text}
+            </Text>
         </Flex>
     )
 }
