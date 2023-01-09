@@ -16,28 +16,33 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_LIGHT }) {
     const { data, isLoading } = useQuery(key, fn)
 
     function _renderData() {
-        return data?.map(
-            ({
-                release_dates: releaseDates,
-                total_rating: totalRating,
-                cover,
-                name,
-                id,
-                summary,
-            }) => {
-                const newestDate = releaseDates[releaseDates.length - 1].human
+        return (
+            <>
+                {data?.map(
+                    ({
+                        release_dates: releaseDates,
+                        total_rating: totalRating,
+                        cover,
+                        name,
+                        id,
+                        summary,
+                    }) => {
+                        const newestDate =
+                            releaseDates[releaseDates.length - 1].human
 
-                return (
-                    <GameCard
-                        key={id}
-                        gameTitle={name}
-                        releaseDate={newestDate}
-                        rating={totalRating}
-                        imageId={cover?.image_id}
-                        summary={summary}
-                    />
-                )
-            }
+                        return (
+                            <GameCard
+                                key={id}
+                                gameTitle={name}
+                                releaseDate={newestDate}
+                                rating={totalRating}
+                                imageId={cover?.image_id}
+                                summary={summary}
+                            />
+                        )
+                    }
+                )}
+            </>
         )
     }
 
