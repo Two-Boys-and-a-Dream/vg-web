@@ -4,6 +4,13 @@ import { GameCard } from '../molecules'
 import { Loader } from '../atoms'
 import pt from 'prop-types'
 
+/**
+ * Controls data/fetching states for game data via react-query.
+ * Shows <Loader /> component while data fetching.
+ * Returns mapped out <GameCard /> components after data fetch
+ * Pass in queryName.
+ * @see {@link QUERIES}
+ */
 export function GamesContainer({ queryName = QUERIES.NEW_GAMES_LIGHT }) {
     const { key, fn } = QUERY[queryName]
     const { data, isLoading } = useQuery(key, fn)
