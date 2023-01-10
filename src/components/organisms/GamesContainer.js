@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { Fragment, useEffect, useMemo } from 'react'
 import { useInfiniteQuery } from 'react-query'
 import { QUERY, QUERIES } from '../../api'
 import { GameCard } from '../molecules'
@@ -48,60 +48,75 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_PAGINATED }) {
         }
     }, [fetchNextPage, hasNextPage, queryName])
 
+    /**
+     * Triggers next data pull for pagination
+     */
+    function fetchNext() {
+        fetchNextPage()
+    }
+
+    /**
+     * Determines text of pagination button
+     */
+    const buttonText = useMemo(() => {
+        if (isFetchingNextPage) return 'Loading more...'
+        if (hasNextPage) return 'Load More'
+
+        return 'Nothing more to load'
+    }, [isFetchingNextPage, hasNextPage])
+
     function _renderData() {
         return (
-            <>
-                {data?.pages.map((group, i) => (
-                    <HStack
-                        key={i}
-                        // nowrap for non-paginated uses
-                        // ensures the Home screen <ScrollSection /> components
-                        // continue to layout properly
-                        flexWrap={isPaginated ? 'wrap' : 'nowrap'}
-                        justify="space-evenly"
-                        gap="6"
-                    >
-                        {group.data.map(
-                            ({
-                                release_dates: releaseDates,
-                                total_rating: totalRating,
-                                cover,
-                                name,
-                                id,
-                                summary,
-                            }) => {
-                                const newestDate =
-                                    releaseDates[releaseDates.length - 1].human
+            <Fragment>
+                <HStack
+                    // nowrap for non-paginated uses
+                    // ensures the Home screen <ScrollSection /> components
+                    // continue to layout properly
+                    flexWrap={isPaginated ? 'wrap' : 'nowrap'}
+                    justify="space-evenly"
+                    gap="6"
+                >
+                    {data?.pages.map((group) => (
+                        <Fragment key={`page-${group.data[0].id}`}>
+                            {group.data.map(
+                                ({
+                                    release_dates: releaseDates,
+                                    total_rating: totalRating,
+                                    cover,
+                                    name,
+                                    id,
+                                    summary,
+                                }) => {
+                                    const newestDate =
+                                        releaseDates[releaseDates.length - 1]
+                                            .human
 
-                                return (
-                                    <GameCard
-                                        key={id}
-                                        gameTitle={name}
-                                        releaseDate={newestDate}
-                                        rating={totalRating}
-                                        imageId={cover?.image_id}
-                                        summary={summary}
-                                    />
-                                )
-                            }
-                        )}
-                    </HStack>
-                ))}
+                                    return (
+                                        <GameCard
+                                            key={id}
+                                            gameTitle={name}
+                                            releaseDate={newestDate}
+                                            rating={totalRating}
+                                            imageId={cover?.image_id}
+                                            summary={summary}
+                                        />
+                                    )
+                                }
+                            )}
+                        </Fragment>
+                    ))}
+                </HStack>
 
                 {/* Hides the fetch next page button on non-paginated queries */}
                 {isPaginated ? (
                     <Button
-                        onClick={() => fetchNextPage()}
+                        onClick={fetchNext}
                         disabled={!hasNextPage || isFetchingNextPage}
                     >
-                        {isFetchingNextPage
-                            ? 'Loading more...'
-                            : hasNextPage
-                            ? 'Load More'
-                            : 'Nothing more to load'}
+                        {buttonText}
                     </Button>
                 ) : null}
-            </>
+            </Fragment>
         )
     }
 
