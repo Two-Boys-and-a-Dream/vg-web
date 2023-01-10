@@ -18,7 +18,7 @@ export function Router() {
                         element={
                             <GamesPage
                                 title="New Games"
-                                queryName={QUERIES.NEW_GAMES_LIGHT}
+                                queryName={QUERIES.NEW_GAMES_PAGINATED}
                             />
                         }
                     />
@@ -27,7 +27,7 @@ export function Router() {
                         element={
                             <GamesPage
                                 title="Upcoming Games"
-                                queryName={QUERIES.UPCOMING_GAMES_LIGHT}
+                                queryName={QUERIES.UPCOMING_GAMES_PAGINATED}
                             />
                         }
                     />
@@ -36,7 +36,7 @@ export function Router() {
                         element={
                             <GamesPage
                                 title="Popular Games"
-                                queryName={QUERIES.POPULAR_GAMES_LIGHT}
+                                queryName={QUERIES.POPULAR_GAMES_PAGINATED}
                             />
                         }
                     />

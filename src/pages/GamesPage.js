@@ -1,4 +1,4 @@
-import { Heading, HStack, VStack } from '@chakra-ui/react'
+import { Heading, VStack } from '@chakra-ui/react'
 import { GamesContainer } from '../components'
 import pt from 'prop-types'
 
@@ -11,9 +11,7 @@ export function GamesPage({ title = 'Missing Page Title', queryName }) {
     return (
         <VStack gap="2">
             <Heading alignSelf="flex-start">{title}</Heading>
-            <HStack flexWrap="wrap" justify="space-evenly" gap="6">
-                <GamesContainer queryName={queryName} />
-            </HStack>
+            <GamesContainer queryName={queryName} />
         </VStack>
     )
 }
