@@ -6,7 +6,7 @@ import pt from 'prop-types'
  */
 export function SectionTitle({ children = 'Section Title' }) {
     return (
-        <Text fontSize="xl" fontWeight={600}>
+        <Text fontSize="4xl" fontWeight={600}>
             {children}
         </Text>
     )

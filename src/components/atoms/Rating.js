@@ -13,11 +13,11 @@ export function Rating({ value = '?' }) {
 
         switch (true) {
             case value >= 75:
-                return 'green'
+                return '#22C55E'
             case value >= 50:
-                return 'yellow'
+                return '#F59E0B'
             default:
-                return 'red'
+                return '#EF4444'
         }
     }, [value])
 
@@ -30,7 +30,7 @@ export function Rating({ value = '?' }) {
             justify={'center'}
             align={'center'}
         >
-            <Text color="black" fontWeight="bold" fontSize="xl">
+            <Text color="black" fontSize="2xl">
                 {text}
             </Text>
         </Flex>

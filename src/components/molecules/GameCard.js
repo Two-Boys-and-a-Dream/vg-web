@@ -17,13 +17,18 @@ export function GameCard({
         <Card
             data-testid="game-card"
             color="white"
-            minW="325px"
-            maxW="325px"
+            minW="400px"
+            maxW="400px"
             gap="2"
-            bg="#161616"
-            p="2"
+            bg="#262626"
+            p="3"
         >
-            <Image src={constructImgURL(imageId)} w="100%" h="200px" />
+            <Image
+                src={constructImgURL(imageId)}
+                w="100%"
+                h="200px"
+                borderRadius="4px"
+            />
             <HStack>
                 <Rating value={rating} />
                 <VStack align="flex-start">
@@ -32,7 +37,7 @@ export function GameCard({
                         whiteSpace="nowrap"
                         overflow="clip"
                         textOverflow="ellipsis"
-                        w="250px"
+                        w="325px"
                     >
                         {gameTitle}
                     </Heading>
