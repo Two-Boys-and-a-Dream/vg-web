@@ -23,6 +23,31 @@ export const FAKE_GAMES = {
     ],
 }
 
+export const ADDITIONAL_FAKE_GAMES = {
+    count: 2,
+    limit: 2,
+    lastCursor: 2,
+    nextCursor: null,
+    data: [
+        {
+            id: '3',
+            name: 'A Totally New Random Game',
+            total_rating: 99,
+            release_dates: [{ human: '08/12/22' }],
+            cover: { image_id: 'testImg3' },
+            summary: 'long test summary 3',
+        },
+        {
+            id: '4',
+            name: 'Some Other Random Game',
+            total_rating: 41,
+            release_dates: [{ human: '10/21/22' }],
+            cover: { image_id: 'testImg4' },
+            summary: 'long test summary 4',
+        },
+    ],
+}
+
 export const FAKE_NEWS = [
     {
         _id: '1',
