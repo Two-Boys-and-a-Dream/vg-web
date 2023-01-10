@@ -46,12 +46,18 @@ describe('<GamesContainer />', () => {
             expect(queryByTestId('loader')).toBeNull()
         })
 
-        await waitFor(() => {
-            // click load more
-            fireEvent.click(getByText('Load More'))
+        expect(queryByText('Loading more...')).toBeNull()
+        expect(queryByText('Nothing more to load')).toBeNull()
 
+        // click load more
+        fireEvent.click(getByText('Load More'))
+
+        await waitFor(() => {
             // make sure second set is rendered
-            expect(queryByText('A Totally New Random Game')).toBeDefined()
+            expect(getByText('A Totally New Random Game')).toBeDefined()
         })
+
+        // check that button says nothing left to load
+        expect(getByText('Nothing more to load')).toBeDefined()
     })
 })
