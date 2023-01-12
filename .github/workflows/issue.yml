@@ -16,4 +16,5 @@ jobs:
                   project-number: 2
                   issue-id: ${{ github.event.issue.node_id }}
             - run: |
-                  echo '${{ steps.add-issue-to-project.outputs.added-project-item-id }}'
+                  echo 'project item id: ${{ steps.add-issue-to-project.outputs.added-project-item-id }}'
+                  echo 'error: ${{ steps.add-issue-to-project.outputs.error }}'
