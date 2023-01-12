@@ -1,0 +1,16 @@
+name: Add Issue to Project
+on:
+    issues:
+        types: [opened]
+
+jobs:
+    Add_Issue_To_Project:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: monry/actions-add-issue-to-project@v2
+              with:
+                  # Personal Access Token that with `repo`, `project`, `org:read` and `org:write` are granted.
+                  github-token: ${{ secrets.GH_TOKEN }}
+                  project-owner: 'Two-Boys-and-a-Dream'
+                  project-number: 2
+                  issue-id: ${{ github.event.issue.node_id }}
