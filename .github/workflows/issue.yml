@@ -1,20 +1,15 @@
 name: Add Issue to Project
+
 on:
     issues:
-        types: [opened]
+        types:
+            - opened
 
 jobs:
     Add_Issue_To_Project:
         runs-on: ubuntu-latest
         steps:
-            - uses: monry/actions-add-issue-to-project@v2
-              id: add-issue-to-project # requires `id` to refer output values with after steps
+            - uses: actions/add-to-project@v0.4.0
               with:
-                  # Personal Access Token that with `repo`, `project`, `org:read` and `org:write` are granted.
+                  project-url: https://github.com/orgs/Two-Boys-and-a-Dream/projects/2
                   github-token: ${{ secrets.GH_TOKEN }}
-                  project-owner: 'Two-Boys-and-a-Dream'
-                  project-number: 2
-                  issue-id: ${{ github.event.issue.node_id }}
-            - run: |
-                  echo 'project item id: ${{ steps.add-issue-to-project.outputs.added-project-item-id }}'
-                  echo 'error: ${{ steps.add-issue-to-project.outputs.error }}'
