@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { Stack } from '@chakra-ui/react'
 import pt from 'prop-types'
 
+// TODO: Update the jsdoc for this component.
 /**
  * A container that is scrollable horizontal or vertical.
  * Adds spacing to children elements.
@@ -26,15 +26,9 @@ export function ScrollContainer({
     )
 
     return (
-        <Stack
-            direction={horizontal ? 'row' : 'column'}
-            spacing={spacing}
-            mb={spacing}
-            {...scrollStyles}
-            {...rest}
-        >
+        <div style={styling(scrollStyles, horizontal, spacing, rest)}>
             {children}
-        </Stack>
+        </div>
     )
 }
 
@@ -42,4 +36,15 @@ ScrollContainer.propTypes = {
     horizontal: pt.bool,
     spacing: pt.oneOfType([pt.string, pt.number]),
     children: pt.node,
+}
+
+const styling = (scrollStyles, horizontal, spacing, rest) => {
+    return {
+        ...scrollStyles,
+        display: 'flex',
+        flexDirection: `${horizontal ? 'row' : 'column'}`,
+        spacing: `${spacing}`,
+        marginBottom: `${spacing}`,
+        ...rest,
+    }
 }

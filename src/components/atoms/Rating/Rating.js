@@ -1,4 +1,3 @@
-import { Flex, Text } from '@chakra-ui/react'
 import pt from 'prop-types'
 import { useMemo } from 'react'
 
@@ -22,19 +21,24 @@ export function Rating({ value = '?' }) {
     }, [value])
 
     return (
-        <Flex
-            bg={bgColor}
-            h="50px"
-            minW="50px"
-            borderRadius={'20%'}
-            justify={'center'}
-            align={'center'}
-        >
-            <Text>{text}</Text>
-        </Flex>
+        <div style={styling(bgColor)}>
+            <p style={{ fontSize: '1.25rem' }}>{text}</p>
+        </div>
     )
 }
 
 Rating.propTypes = {
     value: pt.oneOfType([pt.string, pt.number]),
+}
+
+const styling = (bgColor) => {
+    return {
+        backgroundColor: bgColor,
+        height: '50px',
+        minWidth: '50px',
+        borderRadius: '20%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 }

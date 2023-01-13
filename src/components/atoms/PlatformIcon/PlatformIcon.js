@@ -1,17 +1,24 @@
-import { Image } from '@chakra-ui/react'
 import pt from 'prop-types'
 
+// TODO: Is this still being used?
 export function PlatformIcon({ url = 'missing icon' }) {
     return (
-        <Image
+        <img
+            style={styling}
             data-testid="platform-icon"
-            boxSize={'40px'}
-            borderRadius={'5px'}
             src={url}
+            alt={'Platform Icon'}
         />
     )
 }
 
 PlatformIcon.propTypes = {
     url: pt.string,
+}
+
+// TODO: Move to a sass module
+const styling = {
+    width: '40px',
+    height: '40px',
+    borderRadius: '5px',
 }
