@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  width: 325px;
+  max-width: 325px;
+  max-height: 500px;
+  color: white;
+  background: black;
+}
+
+img {
+  width: 100%;
+  height: 150px;
+  max-height: 250px;
+  object-fit: fill;
+}
+
+h2 {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: clip;
+  text-overflow: ellipsis;
+  width: 250px;
+  max-width: 250px;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.summary {
+  height: 100px;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

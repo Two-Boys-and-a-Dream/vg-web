@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { GameCard } from '../GameCard'
+import { GameCard } from '../GameCard/GameCard'
 
 describe('<GameCard />', () => {
     it('renders', () => {

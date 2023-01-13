@@ -1,7 +1,7 @@
-import { Flex, Link as ChakraLink } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { ScrollContainer, SectionTitle } from '../atoms'
+import { ScrollContainer, SectionTitle } from '../../atoms'
 import pt from 'prop-types'
+import styles from './ScrollSection.module.scss'
 
 /**
  * Combines the horizontal scroll container, and the title/link above it.
@@ -14,18 +14,14 @@ export function ScrollSection({
     children,
 }) {
     return (
-        <Flex direction="column" mb="20px">
-            <Flex justify="space-between">
+        <div className={styles.container}>
+            <div>
                 <SectionTitle>{title}</SectionTitle>
-                {linkPath ? (
-                    <ChakraLink as={Link} to={linkPath}>
-                        {linkText}
-                    </ChakraLink>
-                ) : null}
-            </Flex>
+                {linkPath ? <Link to={linkPath}>{linkText}</Link> : null}
+            </div>
 
             <ScrollContainer>{children}</ScrollContainer>
-        </Flex>
+        </div>
     )
 }
 
