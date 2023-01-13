@@ -1,0 +1,28 @@
+.loadingContainer
+  width: 100px
+  height: 100px
+
+
+.loadingCircle
+  width: 100%
+  height: 100%
+  padding: 0.2rem
+  border-radius: 50%
+  background: #201f38
+  animation: spin 1s ease-in-out infinite
+  margin: 0 auto
+  display: flex
+  justify-content: center
+
+
+.loadingCircleInner
+  width: 25px
+  height: 25px
+  //margin-top: 0.5rem
+  border-radius: 50%
+  background-color: #0acc1d
+
+
+@keyframes spin
+  to
+    transform: rotate(360deg)

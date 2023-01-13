@@ -1,12 +1,14 @@
-import { Flex, Spinner } from '@chakra-ui/react'
+import styles from './sass/Loading.module.sass'
 
 /**
  * A centered loading spinner.
  */
 export function Loader() {
     return (
-        <Flex justify="center" align="center" w="100%" data-testid="loader">
-            <Spinner />
-        </Flex>
+        <div className={styles.loadingContainer}>
+            <div className={styles.loadingCircle}>
+                <div className={styles.loadingCircleInner}></div>
+            </div>
+        </div>
     )
 }
