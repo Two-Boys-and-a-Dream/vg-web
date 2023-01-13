@@ -1,16 +1,10 @@
-import { SIZES } from '../../../constants'
+import * as styles from './PageWrapper.module.scss'
 import pt from 'prop-types'
 
 export function PageWrapper({ children }) {
-    return <div style={styling}>{children}</div>
+    return <div className={styles.wrapper}>{children}</div>
 }
 
 PageWrapper.propTypes = {
     children: pt.node,
-}
-
-const styling = {
-    width: `calc(100% - ${SIZES.navbarWidth}`,
-    marginLeft: `${SIZES.navbarWidth}`,
-    padding: `${SIZES.pagePadding}`,
 }

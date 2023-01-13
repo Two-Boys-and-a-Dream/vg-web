@@ -1,0 +1,7 @@
+@use '../../../styles/vars';
+
+.wrapper {
+    width: vars.$page-width;
+    margin-left: vars.$navbar-width;
+    padding: vars.$page-padding;
+}

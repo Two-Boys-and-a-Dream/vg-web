@@ -1,5 +1,4 @@
 export { Rating } from './Rating/Rating'
-export { PlatformIcon } from './PlatformIcon/PlatformIcon'
 export { ScrollContainer } from './ScrollContainer/ScrollContainer'
 export { SectionTitle } from './SectionTitle/SectionTitle'
 export { Loader } from './Loader/Loader'
