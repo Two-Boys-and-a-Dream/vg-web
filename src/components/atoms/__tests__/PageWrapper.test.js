@@ -1,4 +1,4 @@
-import { PageWrapper } from '../PageWrapper'
+import { PageWrapper } from '../PageWrapper/PageWrapper'
 import { render } from '@testing-library/react'
 
 describe('<PageWrapper />', () => {

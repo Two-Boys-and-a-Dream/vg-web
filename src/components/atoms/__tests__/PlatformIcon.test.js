@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { PlatformIcon } from '../PlatformIcon'
+import { PlatformIcon } from '../PlatformIcon/PlatformIcon'
 
 describe('<PlatformIcon />', () => {
     it('renders', () => {

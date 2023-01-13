@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { SectionTitle } from '../SectionTitle'
+import { SectionTitle } from '../SectionTitle/SectionTitle'
 
 describe('<SectionTitle />', () => {
     it('renders', () => {
