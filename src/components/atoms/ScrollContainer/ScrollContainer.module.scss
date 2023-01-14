@@ -1,0 +1,43 @@
+@use '/src/styles/placeholders';
+
+$spacing: 30px;
+
+.horizontal {
+    @extend %flex-row;
+    @extend %overflow-row;
+    padding: $spacing 0;
+}
+
+.vertical {
+    @extend %flex-column;
+    @extend %overflow-column;
+    gap: 2rem;
+    padding: $spacing 5px $spacing 0;
+}
+
+//%flex-center {
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//}
+//
+//%flex-column {
+//    display: flex;
+//    flex-direction: column;
+//}
+//
+//.flex-row-center {
+//    @extend %flex-center;
+//}
+//
+//.flex-column-center {
+//    @extend %flex-center;
+//    @extend %flex-column;
+//}
+//
+//%base-styles {
+//    display: flex;
+//    padding: $spacing 0;
+//    margin-bottom: $spacing;
+//    //@extend
+//}

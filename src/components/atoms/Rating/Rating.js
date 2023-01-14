@@ -1,5 +1,6 @@
 import pt from 'prop-types'
 import { useMemo } from 'react'
+import * as styles from './Rating.module.scss'
 
 export function Rating({ value = '?' }) {
     const text = useMemo(
@@ -8,37 +9,28 @@ export function Rating({ value = '?' }) {
     )
 
     const bgColor = useMemo(() => {
-        if (typeof value !== 'number') return 'grey'
+        if (typeof value !== 'number') return '#7e8aa9'
 
         switch (true) {
             case value >= 75:
-                return 'green'
+                return '#22c55e'
             case value >= 50:
-                return 'yellow'
+                return '#f59e0b'
             default:
-                return 'red'
+                return '#ef4444'
         }
     }, [value])
 
     return (
-        <div style={styling(bgColor)}>
-            <p style={{ fontSize: '1.25rem' }}>{text}</p>
+        <div
+            className={styles.container}
+            style={{ backgroundColor: `${bgColor}` }}
+        >
+            <p>{text}</p>
         </div>
     )
 }
 
 Rating.propTypes = {
     value: pt.oneOfType([pt.string, pt.number]),
-}
-
-const styling = (bgColor) => {
-    return {
-        backgroundColor: bgColor,
-        height: '50px',
-        minWidth: '50px',
-        borderRadius: '20%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    }
 }
