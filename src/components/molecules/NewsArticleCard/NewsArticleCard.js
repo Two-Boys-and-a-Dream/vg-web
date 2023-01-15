@@ -8,7 +8,7 @@ export function NewsArticleCard({
 }) {
     return (
         <a href={link} rel={'external'}>
-            <div data-testid="news-article-card" className={styles.container}>
+            <div data-testid="news-article-card" className={styles.newsArticle}>
                 <p>{title}</p>
                 <img src={thumbnail} alt="missing image" />
             </div>
