@@ -1,10 +1,10 @@
 import { Fragment, useEffect, useMemo } from 'react'
 import { useInfiniteQuery } from 'react-query'
-import { QUERY, QUERIES } from '../../api'
-import { GameCard } from '../molecules'
-import { Loader } from '../atoms'
-import { Button, HStack } from '@chakra-ui/react'
+import { QUERY, QUERIES } from '../../../api'
+import { GameCard } from '../../molecules'
+import { Loader } from '../../atoms'
 import pt from 'prop-types'
+import * as styles from './GamesContainer.module.scss'
 
 /**
  * Controls data/fetching states for game data via react-query.
@@ -67,14 +67,14 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_PAGINATED }) {
 
     function _renderData() {
         return (
-            <Fragment>
-                <HStack
+            <>
+                <div
                     // nowrap for non-paginated uses
                     // ensures the Home screen <ScrollSection /> components
                     // continue to layout properly
-                    flexWrap={isPaginated ? 'wrap' : 'nowrap'}
-                    justify="space-evenly"
-                    gap="6"
+                    className={`${styles.gamesContainer} ${
+                        isPaginated && styles.gamesWrap
+                    }`}
                 >
                     {data?.pages.map((group) => (
                         <Fragment key={`page-${group.data[0].id}`}>
@@ -105,18 +105,18 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_PAGINATED }) {
                             )}
                         </Fragment>
                     ))}
-                </HStack>
+                </div>
 
                 {/* Hides the fetch next page button on non-paginated queries */}
                 {isPaginated ? (
-                    <Button
+                    <button
                         onClick={fetchNext}
                         disabled={!hasNextPage || isFetchingNextPage}
                     >
                         {buttonText}
-                    </Button>
+                    </button>
                 ) : null}
-            </Fragment>
+            </>
         )
     }
 

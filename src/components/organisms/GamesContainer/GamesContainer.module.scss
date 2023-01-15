@@ -1,0 +1,12 @@
+@use 'src/styles/placeholders';
+
+.gamesContainer {
+    @extend %flex-row;
+
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.gamesWrap {
+    @extend %wrap;
+}

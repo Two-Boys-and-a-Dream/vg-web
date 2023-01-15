@@ -1,6 +1,6 @@
 @use 'src/styles/placeholders';
 
-$spacing: 30px;
+$spacing: 0.95rem;
 
 .horizontal {
     @extend %flex-row;
@@ -12,5 +12,5 @@ $spacing: 30px;
     @extend %flex-column;
     @extend %overflow-column;
     gap: 2rem;
-    padding: $spacing 5px $spacing 0;
+    padding: 0 $spacing 0 0;
 }

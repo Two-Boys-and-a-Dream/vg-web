@@ -1,5 +1,5 @@
-import { ScrollSection } from '../molecules'
-import { GamesContainer } from './GamesContainer'
+import { ScrollSection } from '../../molecules'
+import { GamesContainer } from '../GamesContainer/GamesContainer'
 import pt from 'prop-types'
 
 /**

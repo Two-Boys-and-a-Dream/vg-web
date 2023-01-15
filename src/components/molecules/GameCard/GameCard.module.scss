@@ -5,7 +5,7 @@
     $width: 325px;
     $height: 400px;
     @extend %flex-column;
-    gap: 0.4rem;
+    gap: 0.5rem;
     padding: 0.5rem;
     width: $width;
     max-width: $width;
@@ -42,8 +42,5 @@
 }
 
 .summary {
-    $height: 100px;
-    height: $height;
-    max-height: $height;
     overflow: hidden;
 }

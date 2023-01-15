@@ -1,5 +1,5 @@
 import { fireEvent, waitFor } from '@testing-library/react'
-import { GamesContainer } from '../GamesContainer'
+import { GamesContainer } from '../GamesContainer/GamesContainer'
 import { ADDITIONAL_FAKE_GAMES, FAKE_GAMES } from '../../../data/dummy-data'
 import { renderWithClient } from '../../../utils/testUtils'
 import axios from 'axios'
