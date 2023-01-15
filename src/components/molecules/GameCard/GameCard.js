@@ -14,15 +14,15 @@ export function GameCard({
     releaseDate = '12/22/22',
 }) {
     return (
-        <div data-testid="game-card" className={styles.card}>
+        <div data-testid="game-card" className={styles.gameCard}>
             <img
                 src={constructImgURL(imageId)}
                 alt={`Cover art for ${gameTitle}`}
-                className={styles.cardCoverImg}
+                className={styles.gameCardCoverImg}
             />
-            <div>
+            <div className={styles.gameCardHead}>
                 <Rating value={rating} />
-                <div className={styles.cardHead}>
+                <div>
                     <h2>{gameTitle}</h2>
                     <p>{releaseDate}</p>
                 </div>

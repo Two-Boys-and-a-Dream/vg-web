@@ -14,8 +14,8 @@ export function ScrollSection({
     children,
 }) {
     return (
-        <div className={styles.container}>
-            <div>
+        <div className={styles.scrollSection}>
+            <div className={styles.scrollHead}>
                 <SectionTitle>{title}</SectionTitle>
                 {linkPath ? <Link to={linkPath}>{linkText}</Link> : null}
             </div>

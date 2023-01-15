@@ -1,7 +1,7 @@
 @use 'src/styles/vars';
 @use 'src/styles/placeholders';
 
-.card {
+.gameCard {
     $width: 325px;
     $height: 400px;
     @extend %flex-column;
@@ -15,11 +15,7 @@
     background: vars.$bg-dark;
 }
 
-.cardHead {
-    @extend %flex-column;
-}
-
-.cardCoverImg {
+.gameCardCoverImg {
     $height: 200px;
     width: 100%;
     height: $height;
@@ -27,16 +23,22 @@
     object-fit: fill;
 }
 
-h2 {
-    $width: 250px;
-    @extend %text-ellipsis;
-    font-size: 1.5rem;
-    width: $width;
-    max-width: $width;
-}
+.gameCardHead {
+    @extend %flex-row;
+    align-items: center;
+    gap: 0.5rem;
 
-p {
-    font-size: 1rem;
+    div {
+        @extend %flex-column;
+
+        h2 {
+            $width: 250px;
+            @extend %text-ellipsis;
+            font-size: 1.5rem;
+            width: $width;
+            max-width: $width;
+        }
+    }
 }
 
 .summary {
