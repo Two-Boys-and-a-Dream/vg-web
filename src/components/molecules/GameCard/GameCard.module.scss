@@ -1,44 +1,53 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 0.5rem;
-  width: 325px;
-  max-width: 325px;
-  max-height: 500px;
-  color: white;
-  background: black;
+@use 'src/styles/vars';
+@use 'src/styles/placeholders';
+
+.card {
+    $width: 325px;
+    $height: 400px;
+    @extend %flex-column;
+    gap: 0.4rem;
+    padding: 0.5rem;
+    width: $width;
+    max-width: $width;
+    height: $height;
+    max-height: $height;
+    color: vars.$text-light;
+    background: vars.$bg-dark;
+}
+
+.cardHead {
+    @extend %flex-column;
 }
 
 img {
-  width: 100%;
-  height: 150px;
-  max-height: 250px;
-  object-fit: fill;
+    $height: 200px;
+    width: 100%;
+    height: $height;
+    max-height: $height;
+    object-fit: fill;
 }
 
 h2 {
-  font-size: 1.5rem;
-  white-space: nowrap;
-  overflow: clip;
-  text-overflow: ellipsis;
-  width: 250px;
-  max-width: 250px;
+    $width: 250px;
+    @extend %text-ellipsis;
+    font-size: 1.5rem;
+    width: $width;
+    max-width: $width;
 }
 
 p {
-  font-size: 1rem;
+    font-size: 1rem;
 }
 
 .summary {
-  height: 100px;
-  max-height: 100px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    height: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .column {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
