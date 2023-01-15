@@ -1,4 +1,3 @@
-import { ChakraProvider } from '@chakra-ui/react'
 import { Router } from './routes/Router'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -17,11 +16,9 @@ const queryClient = new QueryClient({
 
 export function App() {
     return (
-        <ChakraProvider>
-            <QueryClientProvider client={queryClient}>
-                <Router />
-                <ReactQueryDevtools initialIsOpen={false} />
-            </QueryClientProvider>
-        </ChakraProvider>
+        <QueryClientProvider client={queryClient}>
+            <Router />
+            <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
     )
 }
