@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { ScrollContainer } from '../ScrollContainer'
+import { ScrollContainer } from '../ScrollContainer/ScrollContainer'
 
 const childElement = <p>hi</p>
 

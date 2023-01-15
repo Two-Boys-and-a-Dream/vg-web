@@ -1,6 +1,6 @@
-import { Flex, Text } from '@chakra-ui/react'
 import pt from 'prop-types'
 import { useMemo } from 'react'
+import * as styles from './Rating.module.scss'
 
 export function Rating({ value = '?' }) {
     const text = useMemo(
@@ -9,29 +9,22 @@ export function Rating({ value = '?' }) {
     )
 
     const bgColor = useMemo(() => {
-        if (typeof value !== 'number') return 'grey'
+        if (typeof value !== 'number') return styles.noRating
 
         switch (true) {
             case value >= 75:
-                return 'green'
+                return styles.highRating
             case value >= 50:
-                return 'yellow'
+                return styles.mediumRating
             default:
-                return 'red'
+                return styles.lowRating
         }
     }, [value])
 
     return (
-        <Flex
-            bg={bgColor}
-            h="50px"
-            minW="50px"
-            borderRadius={'20%'}
-            justify={'center'}
-            align={'center'}
-        >
-            <Text>{text}</Text>
-        </Flex>
+        <div className={`${styles.container} ${bgColor}`}>
+            <p>{text}</p>
+        </div>
     )
 }
 

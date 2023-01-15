@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Rating } from '../Rating'
+import { Rating } from '../Rating/Rating'
 
 describe('<Rating />', () => {
     it('renders', () => {
