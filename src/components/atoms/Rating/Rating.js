@@ -9,23 +9,20 @@ export function Rating({ value = '?' }) {
     )
 
     const bgColor = useMemo(() => {
-        if (typeof value !== 'number') return '#7e8aa9'
+        if (typeof value !== 'number') return styles.noRating
 
         switch (true) {
             case value >= 75:
-                return '#22c55e'
+                return styles.highRating
             case value >= 50:
-                return '#f59e0b'
+                return styles.mediumRating
             default:
-                return '#ef4444'
+                return styles.lowRating
         }
     }, [value])
 
     return (
-        <div
-            className={styles.container}
-            style={{ backgroundColor: `${bgColor}` }}
-        >
+        <div className={`${styles.container} ${bgColor}`}>
             <p>{text}</p>
         </div>
     )
