@@ -1,0 +1,16 @@
+@use '/src/styles/placeholders';
+
+$spacing: 30px;
+
+.horizontal {
+    @extend %flex-row;
+    @extend %overflow-row;
+    padding: $spacing 0;
+}
+
+.vertical {
+    @extend %flex-column;
+    @extend %overflow-column;
+    gap: 2rem;
+    padding: $spacing 5px $spacing 0;
+}

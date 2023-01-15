@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { Loader } from '../Loader'
+import { Loader } from '../Loader/Loader'
 
 describe('<Loader />', () => {
     it('renders', () => {

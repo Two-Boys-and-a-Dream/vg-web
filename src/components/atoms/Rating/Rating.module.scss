@@ -1,0 +1,32 @@
+@use '/src/styles/vars';
+@use '/src/styles/placeholders';
+
+$box-sizing: 50px;
+
+.container {
+    display: flex;
+    @extend %flex-center;
+
+    border-radius: 20%;
+    width: $box-sizing;
+    height: $box-sizing;
+
+    font-size: 1.5rem;
+    color: vars.$text-dark-alt;
+}
+
+.highRating {
+    background-color: vars.$color-ufo-green;
+}
+
+.mediumRating {
+    background-color: vars.$color-orange;
+}
+
+.lowRating {
+    background-color: vars.$color-carmine-pink;
+}
+
+.noRating {
+    background-color: #7e8aa9;
+}
