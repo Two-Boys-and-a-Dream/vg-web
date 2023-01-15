@@ -22,7 +22,7 @@ export function Rating({ value = '?' }) {
     }, [value])
 
     return (
-        <div className={`${styles.container} ${bgColor}`}>
+        <div className={`${styles.rating} ${bgColor}`}>
             <p>{text}</p>
         </div>
     )
