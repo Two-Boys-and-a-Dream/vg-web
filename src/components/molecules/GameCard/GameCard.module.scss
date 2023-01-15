@@ -1,0 +1,49 @@
+@use 'src/styles/vars';
+@use 'src/styles/placeholders';
+
+.gameCard {
+    $width: 325px;
+    $height: 400px;
+    @extend %flex-column;
+    gap: 0.4rem;
+    padding: 0.5rem;
+    width: $width;
+    max-width: $width;
+    height: $height;
+    max-height: $height;
+    color: vars.$text-light;
+    background: vars.$bg-dark;
+}
+
+.gameCardCoverImg {
+    $height: 200px;
+    width: 100%;
+    height: $height;
+    max-height: $height;
+    object-fit: fill;
+}
+
+.gameCardHead {
+    @extend %flex-row;
+    align-items: center;
+    gap: 0.5rem;
+
+    div {
+        @extend %flex-column;
+
+        h2 {
+            $width: 250px;
+            @extend %text-ellipsis;
+            font-size: 1.5rem;
+            width: $width;
+            max-width: $width;
+        }
+    }
+}
+
+.summary {
+    $height: 100px;
+    height: $height;
+    max-height: $height;
+    overflow: hidden;
+}

@@ -1,0 +1,11 @@
+@use 'src/styles/placeholders';
+
+.scrollSection {
+    @extend %flex-column;
+    margin-bottom: 20px;
+}
+
+.scrollHead {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,9 +1,9 @@
-@use '/src/styles/vars';
-@use '/src/styles/placeholders';
+@use 'src/styles/vars';
+@use 'src/styles/placeholders';
 
 $box-sizing: 50px;
 
-.container {
+.rating {
     display: flex;
     @extend %flex-center;
 

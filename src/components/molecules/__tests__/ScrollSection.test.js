@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { ScrollSection } from '../ScrollSection'
+import { ScrollSection } from '../ScrollSection/ScrollSection'
 
 describe('<ScrollSection />', () => {
     it('renders', () => {
