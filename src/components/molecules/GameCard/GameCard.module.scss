@@ -19,7 +19,7 @@
     @extend %flex-column;
 }
 
-img {
+.cardCoverImg {
     $height: 200px;
     width: 100%;
     height: $height;
@@ -40,14 +40,8 @@ p {
 }
 
 .summary {
-    height: 100px;
-    max-height: 100px;
+    $height: 100px;
+    height: $height;
+    max-height: $height;
     overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.column {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }

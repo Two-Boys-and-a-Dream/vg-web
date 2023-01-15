@@ -18,8 +18,9 @@ export function GameCard({
             <img
                 src={constructImgURL(imageId)}
                 alt={`Cover art for ${gameTitle}`}
+                className={styles.cardCoverImg}
             />
-            <div style={{ display: 'flex' }}>
+            <div>
                 <Rating value={rating} />
                 <div className={styles.cardHead}>
                     <h2>{gameTitle}</h2>
