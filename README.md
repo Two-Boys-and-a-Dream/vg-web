@@ -1,60 +1,54 @@
-# react-boilerplate
+# vg-web
 
-A template to start React projects using Parcel as the bundler.
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
 
-## Getting Started
+## Intro
+![Video Games Central](./docs/vg-central.png)
 
-Click the green "Use this template" button in the top of this repo. Create a new repository.
+[View the live site](https://two-boys-and-a-dream.github.io/vg-web/)
 
-Afterwards clone the repo to your local machine. Then run `npm install`, followed by `npm run start`.
+This repo is a web application built with React and bundled with Parcel. It is part of a larger full-stack project to interface with the International Game Data Base (IGDB) API. The site provides video game related information regarding news, new releases, popular titles, and upcoming games.
 
-Check the scripts in `package.json` for further options.
+[See the Back-End repo here](https://github.com/Two-Boys-and-a-Dream/vg-api)
 
-## Toolchains
+## Requirements
 
-includes the following toolchains setup and configured:
+This project requires a basic understanding and working knowledge of the following technologies:
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/en/main)
+- [React Query](https://react-query-v3.tanstack.com/)
+- [SCSS/SASS](https://sass-lang.com/)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
--   [parcel](https://parceljs.org/) - Build tool
--   [prettier](https://prettier.io/) - Formatter
--   [eslint](https://eslint.org/) - Linter
--   [jest](https://jestjs.io/) - Unit Testing
--   [babel](https://babeljs.io/) - Compiler
--   [sonarcloud](https://www.sonarsource.com/products/sonarcloud/) - Code Scanner
+## Workstation setup
 
-Note: Babel was included primarily for Jest testing React components. Parcel handles the rest of the project under the hood (with their own Babel configuration). Parcel is setup within this project to stay out of the way when necessary for our configuration.
+Clone the repo to your machine. Then run:
 
-## Libraries
+```
+npm i
+```
 
-Aside from the React libraries, this project includes:
+Create a new file in the root project named `.env.development`. Add the following:
+```
+API_URL = https://vg-api-development.up.railway.app/
+```
 
--   [Axios](https://axios-http.com/)
+## Running the project
 
-Note: Axios is clamped to the latest version before 1.0.0 release. The v1 release had lots of issues early in, so I opted to stay behind until they iron out the problems.
+Start the parcel server with:
 
-## Github Actions
+```
+npm run start
+```
 
-2 actions are configured in this project:
+A new tab should open in your browser (localhost:1234/)
 
-1.  PR-Checks (audit, format, lint, test, build)
-2.  Merge-to-Main (audit, test, build, deploy)
+## Deployments
 
-## Deployment
+This project autodeploys to GitHub Pages on each merge to main via GitHub Actions.
 
-This is setup to deploy for Github Pages. The `Merge-to-main` Github action creates or updates a `gh-pages` branch in the repo with bundled production dist folder. You must configure the repo to point the GH pages deployment to the `gh-pages` branch to finish deploying the site.
-
-Inside the repo, click `Settings`, then under code and automation section click `Pages`. Finally, change the branch dropdown to `gh-pages`. Reference image below.
-
-![github pages setup info](./docs/gh-pages-setup.jpg)
-
-## SonarCloud setup
-
--   Sign in through [SonarCloud](https://sonarcloud.io) with your Github Account.
--   Follow the setup instructions to link your repository to SonarCloud. Afterwards, follow the Github Actions configuration tutorial.
--   Disable Automatic Analysis in the Sonarcloud dashboard for the project. Administration -> Analysis Method.
--   Update the organization and projectKey fields in the `sonar-project.properties` file.
--   Be sure to add your `SONAR_TOKEN` to the repository secrets for Github Actions.
-
-## Extras
-
--   Eslint configuration extends the [js-standard](https://standardjs.com/).
--   CSS choice is up to you. Parcel is configured to handle nearly anything except CSS-in-JS.
+[View deployment status](https://github.com/Two-Boys-and-a-Dream/vg-web/deployments/activity_log?environment=github-pages)
