@@ -22,23 +22,25 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_PAGINATED }) {
         })
     const isPaginated = queryName.includes('paginated')
 
-    const handleScroll = async (e) => {
-        let fetching = false
-        const { scrollHeight, scrollTop, clientHeight } =
-            e.target.scrollingElement
-        if (!fetching && scrollHeight - scrollTop <= clientHeight * 1.2) {
-            fetching = true
-            if (hasNextPage) await fetchNextPage()
-            fetching = false
-        }
-    }
-
     /**
      * handles infinite scrolling for paginated screens
      * @see https://blog.openreplay.com/infinite-scrolling-with-react-query/
      */
     useEffect(() => {
         if (isPaginated) {
+            let fetching = false
+            const handleScroll = async (e) => {
+                const { scrollHeight, scrollTop, clientHeight } =
+                    e.target.scrollingElement
+                if (
+                    !fetching &&
+                    scrollHeight - scrollTop <= clientHeight * 1.2
+                ) {
+                    fetching = true
+                    if (hasNextPage) await fetchNextPage()
+                    fetching = false
+                }
+            }
             document.addEventListener('scroll', handleScroll)
             return () => {
                 document.removeEventListener('scroll', handleScroll)
