@@ -1,4 +1,4 @@
-import { NewsContainer } from '../NewsContainer'
+import { NewsContainer } from '../NewsContainer/NewsContainer'
 import { waitFor } from '@testing-library/react'
 import { renderWithClient } from '../../../utils/testUtils'
 import axios from 'axios'

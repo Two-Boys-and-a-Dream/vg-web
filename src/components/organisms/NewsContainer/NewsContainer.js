@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query'
-import { QUERIES, QUERY } from '../../api'
-import { NewsArticleCard } from '../molecules'
-import { ScrollContainer } from '../atoms'
+import { QUERIES, QUERY } from '../../../api'
+import { NewsArticleCard } from '../../molecules'
+import { ScrollContainer } from '../../atoms'
 
 /**
  * Retrieves news articles from API,

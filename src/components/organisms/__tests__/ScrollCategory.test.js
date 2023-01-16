@@ -1,4 +1,4 @@
-import { ScrollCategory } from '../ScrollCategory'
+import { ScrollCategory } from '../ScrollCategory/ScrollCategory'
 import { waitFor } from '@testing-library/react'
 import { renderWithClient } from '../../../utils/testUtils'
 import axios from 'axios'
