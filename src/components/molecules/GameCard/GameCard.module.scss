@@ -44,3 +44,19 @@
 .summary {
     overflow: hidden;
 }
+
+.highRating {
+    background-color: vars.$color-ufo-green;
+}
+
+.mediumRating {
+    background-color: vars.$color-orange;
+}
+
+.lowRating {
+    background-color: vars.$color-carmine-pink;
+}
+
+.noRating {
+    background-color: #7e8aa9;
+}

@@ -1,7 +1,8 @@
 import pt from 'prop-types'
 import { constructImgURL } from '../../../utils'
 import { Rating } from '../../atoms'
-import styles from './GameCard.module.scss'
+import * as styles from './GameCard.module.scss'
+import { useMemo } from 'react'
 
 /**
  * Displays game information in square card.
@@ -9,10 +10,27 @@ import styles from './GameCard.module.scss'
 export function GameCard({
     imageId,
     summary = 'Missing summary data',
-    rating,
+    rating = '?',
     gameTitle = 'Omega Long Game Title',
     releaseDate = '12/22/22',
 }) {
+    const ratingColor = useMemo(() => {
+        if (typeof rating !== 'number') return styles.noRating
+
+        switch (true) {
+            case rating >= 75:
+                return styles.highRating
+            case rating >= 50:
+                return styles.mediumRating
+            default:
+                return styles.lowRating
+        }
+    }, [rating])
+    const ratingText = useMemo(
+        () => (typeof rating === 'number' ? Math.round(rating) : rating),
+        [rating]
+    )
+
     return (
         <div data-testid="game-card" className={styles.gameCard}>
             <img
@@ -21,7 +39,7 @@ export function GameCard({
                 className={styles.gameCardCoverImg}
             />
             <div className={styles.gameCardHead}>
-                <Rating value={rating} />
+                <Rating ratingText={ratingText} bgColor={ratingColor} />
                 <div>
                     <h2>{gameTitle}</h2>
                     <p>{releaseDate}</p>
