@@ -1,6 +1,6 @@
 import { waitFor } from '@testing-library/react'
 import { renderWithClient } from '../../utils/testUtils'
-import { Home } from '../Home'
+import { Home } from '../Home/Home'
 import axios from 'axios'
 import { FAKE_GAMES } from '../../data/dummy-data'
 

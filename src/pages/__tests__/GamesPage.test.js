@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { waitFor } from '@testing-library/react'
 import { renderWithClient } from '../../utils/testUtils'
-import { GamesPage } from '../GamesPage'
+import { GamesPage } from '../GamesPage/GamesPage'
 import { FAKE_GAMES } from '../../data/dummy-data'
 
 beforeEach(() => {

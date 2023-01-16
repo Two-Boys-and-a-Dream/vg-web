@@ -1,6 +1,6 @@
-import { Flex } from '@chakra-ui/layout'
 import { Outlet } from 'react-router-dom'
-import { Navbar, PageWrapper } from '../components'
+import { Navbar, PageWrapper } from '../../components'
+import * as styles from './Layout.module.scss'
 
 /**
  * Main component used in @tanstack/react-router
@@ -8,11 +8,11 @@ import { Navbar, PageWrapper } from '../components'
  */
 export function Layout() {
     return (
-        <Flex>
+        <div className={styles.layout}>
             <Navbar />
             <PageWrapper>
                 <Outlet />
             </PageWrapper>
-        </Flex>
+        </div>
     )
 }

@@ -1,5 +1,5 @@
-import { QUERIES } from '../api'
-import { ScrollCategory } from '../components'
+import { QUERIES } from '../../api'
+import { ScrollCategory } from '../../components'
 
 export function Home() {
     return (
