@@ -2,24 +2,11 @@ import pt from 'prop-types'
 import { useMemo } from 'react'
 import * as styles from './Rating.module.scss'
 
-export function Rating({ value = '?' }) {
+export function Rating({ value = '?', bgColor = '.noRating' }) {
     const text = useMemo(
         () => (typeof value === 'number' ? Math.round(value) : value),
         [value]
     )
-
-    const bgColor = useMemo(() => {
-        if (typeof value !== 'number') return styles.noRating
-
-        switch (true) {
-            case value >= 75:
-                return styles.highRating
-            case value >= 50:
-                return styles.mediumRating
-            default:
-                return styles.lowRating
-        }
-    }, [value])
 
     return (
         <div className={`${styles.rating} ${bgColor}`}>
@@ -30,4 +17,5 @@ export function Rating({ value = '?' }) {
 
 Rating.propTypes = {
     value: pt.oneOfType([pt.string, pt.number]),
+    bgColor: pt.string,
 }
