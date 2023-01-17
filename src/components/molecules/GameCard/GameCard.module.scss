@@ -65,21 +65,21 @@ $mid: vars.$color-orange;
 $low: vars.$color-carmine-pink;
 $noRating: #7e8aa9;
 
-@mixin sideBar($barSize: $sideBarSize, $barStyle: solid, $barColor: $noRating) {
-    border-left: $barSize $barStyle $barColor;
+@mixin sideBar($color: $noRating) {
+    border-left: $sideBarSize solid $color;
 }
 
 .sideBarHigh {
-    @include sideBar($sideBarSize, solid, $high);
+    @include sideBar($high);
 }
 .sideBarMid {
-    @include sideBar($sideBarSize, solid, $mid);
+    @include sideBar($mid);
 }
 .sideBarLow {
-    @include sideBar($sideBarSize, solid, $low);
+    @include sideBar($low);
 }
 .sideBarNoRating {
-    @include sideBar($sideBarSize, solid, $noRating);
+    @include sideBar;
 }
 
 @mixin bgColor($color: $noRating) {
