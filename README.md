@@ -6,6 +6,7 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
 
 ## Intro
+
 ![Video Games Central](./docs/vg-central.png)
 
 [View the live site](https://two-boys-and-a-dream.github.io/vg-web/)
@@ -17,12 +18,13 @@ This repo is a web application built with React and bundled with Parcel. It is p
 ## Requirements
 
 This project requires a basic understanding and working knowledge of the following technologies:
-- [React](https://reactjs.org/)
-- [React Router](https://reactrouter.com/en/main)
-- [React Query](https://react-query-v3.tanstack.com/)
-- [SCSS/SASS](https://sass-lang.com/)
-- [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
+-   [React](https://reactjs.org/)
+-   [React Router](https://reactrouter.com/en/main)
+-   [React Query](https://react-query-v3.tanstack.com/)
+-   [SCSS/SASS](https://sass-lang.com/)
+-   [Jest](https://jestjs.io/)
+-   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## Workstation setup
 
@@ -33,6 +35,7 @@ npm i
 ```
 
 Create a new file in the root project named `.env.development`. Add the following:
+
 ```
 API_URL = https://vg-api-development.up.railway.app/
 ```
