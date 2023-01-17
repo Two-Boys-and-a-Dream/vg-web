@@ -1,12 +1,15 @@
 @use 'src/styles/vars';
 @use 'src/styles/placeholders';
 
+$cardPadding: 0.5rem;
+$sideBarSize: 0.5rem;
+
 .gameCard {
     $width: 275px;
     $height: 475px;
     @extend %flex-column;
     gap: 0.5rem;
-    padding: 0.5rem;
+    padding: $cardPadding;
     border-radius: 0.5rem;
     width: $width;
     max-width: $width;
@@ -42,8 +45,8 @@
     @extend %flex-column;
 
     width: calc(
-        100% - 1rem - 50px
-    ); // (ParentWidth - padding&sidebar - Rating component size)
+        100% - #{$cardPadding} - #{$sideBarSize} - #{vars.$ratingBoxSize}
+    );
     h2 {
         @extend %text-ellipsis;
         font-size: 1.25rem;
@@ -62,30 +65,36 @@ $mid: vars.$color-orange;
 $low: vars.$color-carmine-pink;
 $noRating: #7e8aa9;
 
-$barSize: 0.5rem;
-.sideBarHigh {
-    border-left: $barSize solid $high;
-}
-.sideBarMid {
-    border-left: $barSize solid $mid;
-}
-.sideBarLow {
-    border-left: $barSize solid $low;
-}
-.sideBarNoRating {
-    border-left: $barSize solid $noRating;
+@mixin sideBar($barSize: $sideBarSize, $barStyle: solid, $barColor: $noRating) {
+    border-left: $barSize $barStyle $barColor;
 }
 
+.sideBarHigh {
+    @include sideBar($sideBarSize, solid, $high);
+}
+.sideBarMid {
+    @include sideBar($sideBarSize, solid, $mid);
+}
+.sideBarLow {
+    @include sideBar($sideBarSize, solid, $low);
+}
+.sideBarNoRating {
+    @include sideBar($sideBarSize, solid, $noRating);
+}
+
+@mixin bgColor($color: $noRating) {
+    background-color: $color;
+}
 // <Rating />
 .highRating {
-    background-color: $high;
+    @include bgColor($high);
 }
 .midRating {
-    background-color: $mid;
+    @include bgColor($mid);
 }
 .lowRating {
-    background-color: $low;
+    @include bgColor($low);
 }
 .noRating {
-    background-color: $noRating;
+    @include bgColor($noRating);
 }
