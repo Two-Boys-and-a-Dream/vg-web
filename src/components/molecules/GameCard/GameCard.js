@@ -14,20 +14,24 @@ export function GameCard({
     gameTitle = 'Omega Long Game Title',
     releaseDate = '12/22/22',
 }) {
+    const ratingText = useMemo(
+        () => (typeof rating === 'number' ? Math.round(rating) : rating),
+        [rating]
+    )
     const { ratingStyle, sideBarStyle } = useMemo(() => {
-        if (typeof rating !== 'number')
+        if (typeof ratingText !== 'number')
             return {
                 ratingStyle: styles.noRating,
                 sideBarStyle: styles.sideBarNoRating,
             }
 
         switch (true) {
-            case rating >= 75:
+            case ratingText >= 75:
                 return {
                     ratingStyle: styles.highRating,
                     sideBarStyle: styles.sideBarHigh,
                 }
-            case rating >= 50:
+            case ratingText >= 50:
                 return {
                     ratingStyle: styles.midRating,
                     sideBarStyle: styles.sideBarMid,
@@ -39,12 +43,14 @@ export function GameCard({
                 }
         }
     }, [rating])
-    const ratingText = useMemo(
-        () => (typeof rating === 'number' ? Math.round(rating) : rating),
-        [rating]
-    )
 
-    const SUMMARY_LENGTH = 275
+    const trimmedSummary = useMemo(() => {
+        const SUMMARY_LENGTH = 275
+
+        return summary.length >= SUMMARY_LENGTH
+            ? summary.slice(0, SUMMARY_LENGTH) + ' [...]'
+            : summary
+    }, [summary])
 
     return (
         <div
@@ -64,11 +70,7 @@ export function GameCard({
                     <p>{releaseDate}</p>
                 </div>
             </div>
-            <p className={styles.summary}>
-                {summary.length >= SUMMARY_LENGTH
-                    ? summary.slice(0, SUMMARY_LENGTH) + ' [...]'
-                    : summary}
-            </p>
+            <p className={styles.summary}>{trimmedSummary}</p>
         </div>
     )
 }
