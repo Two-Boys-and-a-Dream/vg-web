@@ -9,24 +9,10 @@ $box-sizing: 50px;
 
     border-radius: 20%;
     width: $box-sizing;
+    max-width: $box-sizing;
     height: $box-sizing;
-
+    max-height: $box-sizing;
     font-size: 1.5rem;
+    font-weight: 600;
     color: vars.$text-dark-alt;
-}
-
-.highRating {
-    background-color: vars.$color-ufo-green;
-}
-
-.mediumRating {
-    background-color: vars.$color-orange;
-}
-
-.lowRating {
-    background-color: vars.$color-carmine-pink;
-}
-
-.noRating {
-    background-color: #7e8aa9;
 }

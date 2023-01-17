@@ -1,46 +1,100 @@
 @use 'src/styles/vars';
 @use 'src/styles/placeholders';
 
+$cardPadding: 0.5rem;
+$sideBarSize: 0.5rem;
+
 .gameCard {
-    $width: 325px;
-    $height: 400px;
+    $width: 275px;
+    $height: 475px;
     @extend %flex-column;
     gap: 0.5rem;
-    padding: 0.5rem;
+    padding: $cardPadding;
+    border-radius: 0.5rem;
     width: $width;
     max-width: $width;
     height: $height;
     max-height: $height;
-    color: vars.$text-light;
-    background: vars.$bg-dark;
+    background: vars.$bg-dark-lightest;
 }
 
-.gameCardCoverImg {
-    $height: 200px;
-    width: 100%;
+.gameImgContainer {
+    $height: 250px; // 187px half image height
+    $width: 175px; // 132px half image width
+    width: $width;
+    max-width: $width;
     height: $height;
     max-height: $height;
-    object-fit: fill;
+
+    img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
 }
 
 .gameCardHead {
     @extend %flex-row;
     align-items: center;
     gap: 0.5rem;
+}
 
-    div {
-        @extend %flex-column;
+.headText {
+    @extend %flex-column;
 
-        h2 {
-            $width: 250px;
-            @extend %text-ellipsis;
-            font-size: 1.5rem;
-            width: $width;
-            max-width: $width;
-        }
+    width: calc(
+        100% - #{$cardPadding} - #{$sideBarSize} - #{vars.$ratingBoxSize}
+    );
+    h2 {
+        @extend %text-ellipsis;
+        font-size: 1.25rem;
     }
 }
 
 .summary {
     overflow: hidden;
+    width: available;
+    height: 175px;
+}
+
+// Classes & Vars for styles based on rating.
+$high: vars.$color-ufo-green;
+$mid: vars.$color-orange;
+$low: vars.$color-carmine-pink;
+$noRating: #7e8aa9;
+
+@mixin sideBar($color: $noRating) {
+    border-left: $sideBarSize solid $color;
+}
+
+.sideBarHigh {
+    @include sideBar($high);
+}
+.sideBarMid {
+    @include sideBar($mid);
+}
+.sideBarLow {
+    @include sideBar($low);
+}
+.sideBarNoRating {
+    @include sideBar;
+}
+
+@mixin bgColor($color: $noRating) {
+    background-color: $color;
+}
+// <Rating />
+.highRating {
+    @include bgColor($high);
+}
+.midRating {
+    @include bgColor($mid);
+}
+.lowRating {
+    @include bgColor($low);
+}
+.noRating {
+    @include bgColor($noRating);
 }
