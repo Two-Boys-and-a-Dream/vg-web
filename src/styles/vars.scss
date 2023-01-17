@@ -2,6 +2,7 @@
 $navbar-width: 300px;
 $page-width: calc(100% - $navbar-width);
 $page-padding: 50px;
+$ratingBoxSize: 50px;
 
 // Colors
 // Got these color names from https://www.color-name.com/hex.
@@ -9,13 +10,14 @@ $color-ufo-green: #22c55e;
 $color-orange: #f59e0b;
 $color-carmine-pink: #ef4444;
 $color-solid-black: #171717;
-$color-raisin-black: #404040;
+$color-raisin-black: #262626;
+$color-black-olive: #404040;
 $color-chinese-white: #e1e1e1;
 $color-gunmetal: #28343f;
 
 // Colors - Background & Text
 $bg-dark-lightest: $color-raisin-black;
-$bg-dark-lighter: #262626;
+$bg-dark-lighter: $color-black-olive;
 $bg-dark: $color-solid-black;
 $text-dark: $color-solid-black;
 $text-light: $color-chinese-white;
