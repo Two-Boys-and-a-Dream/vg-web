@@ -9,8 +9,10 @@ $box-sizing: 50px;
 
     border-radius: 20%;
     width: $box-sizing;
+    max-width: $box-sizing;
     height: $box-sizing;
-
+    max-height: $box-sizing;
     font-size: 1.5rem;
+    font-weight: 600;
     color: vars.$text-dark-alt;
 }

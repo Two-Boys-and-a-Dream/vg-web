@@ -6,7 +6,7 @@
     @extend %flex-column;
 
     position: fixed;
-    background-color: vars.$color-chinese-white;
+    background-color: vars.$bg-dark;
     border-right: 1px;
     width: vars.$navbar-width;
     max-width: vars.$navbar-width;

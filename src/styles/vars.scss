@@ -8,13 +8,15 @@ $page-padding: 50px;
 $color-ufo-green: #22c55e;
 $color-orange: #f59e0b;
 $color-carmine-pink: #ef4444;
-$color-solid-black: #161616;
-$color-raisin-black: #262626;
+$color-solid-black: #171717;
+$color-raisin-black: #404040;
 $color-chinese-white: #e1e1e1;
 $color-gunmetal: #28343f;
 
 // Colors - Background & Text
-$bg-dark: $color-raisin-black;
+$bg-dark-lightest: $color-raisin-black;
+$bg-dark-lighter: #262626;
+$bg-dark: $color-solid-black;
 $text-dark: $color-solid-black;
 $text-light: $color-chinese-white;
 $text-dark-alt: $color-gunmetal;

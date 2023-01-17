@@ -2,61 +2,90 @@
 @use 'src/styles/placeholders';
 
 .gameCard {
-    $width: 325px;
-    $height: 400px;
+    $width: 275px;
+    $height: 475px;
     @extend %flex-column;
     gap: 0.5rem;
     padding: 0.5rem;
+    border-radius: 0.5rem;
     width: $width;
     max-width: $width;
     height: $height;
     max-height: $height;
-    color: vars.$text-light;
-    background: vars.$bg-dark;
+    background: vars.$bg-dark-lightest;
 }
 
-.gameCardCoverImg {
-    $height: 200px;
-    width: 100%;
+.gameImgContainer {
+    $height: 250px; // 187px half image height
+    $width: 175px; // 132px half image width
+    width: $width;
+    max-width: $width;
     height: $height;
     max-height: $height;
-    object-fit: fill;
+
+    img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
 }
 
 .gameCardHead {
     @extend %flex-row;
     align-items: center;
     gap: 0.5rem;
+}
 
-    div {
-        @extend %flex-column;
+.headText {
+    @extend %flex-column;
 
-        h2 {
-            $width: 250px;
-            @extend %text-ellipsis;
-            font-size: 1.5rem;
-            width: $width;
-            max-width: $width;
-        }
+    width: calc(
+        100% - 1rem - 50px
+    ); // (ParentWidth - padding&sidebar - Rating component size)
+    h2 {
+        @extend %text-ellipsis;
+        font-size: 1.25rem;
     }
 }
 
 .summary {
     overflow: hidden;
+    width: available;
+    height: 175px;
 }
 
+// Classes & Vars for styles based on rating.
+$high: vars.$color-ufo-green;
+$mid: vars.$color-orange;
+$low: vars.$color-carmine-pink;
+$noRating: #7e8aa9;
+
+$barSize: 0.5rem;
+.sideBarHigh {
+    border-left: $barSize solid $high;
+}
+.sideBarMid {
+    border-left: $barSize solid $mid;
+}
+.sideBarLow {
+    border-left: $barSize solid $low;
+}
+.sideBarNoRating {
+    border-left: $barSize solid $noRating;
+}
+
+// <Rating />
 .highRating {
-    background-color: vars.$color-ufo-green;
+    background-color: $high;
 }
-
-.mediumRating {
-    background-color: vars.$color-orange;
+.midRating {
+    background-color: $mid;
 }
-
 .lowRating {
-    background-color: vars.$color-carmine-pink;
+    background-color: $low;
 }
-
 .noRating {
-    background-color: #7e8aa9;
+    background-color: $noRating;
 }

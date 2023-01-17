@@ -10,20 +10,33 @@ import { useMemo } from 'react'
 export function GameCard({
     imageId,
     summary = 'Missing summary data',
-    rating = '?',
+    rating,
     gameTitle = 'Omega Long Game Title',
     releaseDate = '12/22/22',
 }) {
-    const ratingColor = useMemo(() => {
-        if (typeof rating !== 'number') return styles.noRating
+    const { ratingStyle, sideBarStyle } = useMemo(() => {
+        if (typeof rating !== 'number')
+            return {
+                ratingStyle: styles.noRating,
+                sideBarStyle: styles.sideBarNoRating,
+            }
 
         switch (true) {
             case rating >= 75:
-                return styles.highRating
+                return {
+                    ratingStyle: styles.highRating,
+                    sideBarStyle: styles.sideBarHigh,
+                }
             case rating >= 50:
-                return styles.mediumRating
+                return {
+                    ratingStyle: styles.midRating,
+                    sideBarStyle: styles.sideBarMid,
+                }
             default:
-                return styles.lowRating
+                return {
+                    ratingStyle: styles.lowRating,
+                    sideBarStyle: styles.sideBarLow,
+                }
         }
     }, [rating])
     const ratingText = useMemo(
@@ -31,21 +44,31 @@ export function GameCard({
         [rating]
     )
 
+    const SUMMARY_LENGTH = 275
+
     return (
-        <div data-testid="game-card" className={styles.gameCard}>
-            <img
-                src={constructImgURL(imageId)}
-                alt={`Cover art for ${gameTitle}`}
-                className={styles.gameCardCoverImg}
-            />
+        <div
+            data-testid="game-card"
+            className={`${styles.gameCard} ${sideBarStyle}`}
+        >
+            <div className={styles.gameImgContainer}>
+                <img
+                    src={constructImgURL(imageId)}
+                    alt={`Cover art for ${gameTitle}`}
+                />
+            </div>
             <div className={styles.gameCardHead}>
-                <Rating ratingText={ratingText} bgColor={ratingColor} />
-                <div>
+                <Rating ratingText={ratingText} bgColor={ratingStyle} />
+                <div className={styles.headText}>
                     <h2>{gameTitle}</h2>
                     <p>{releaseDate}</p>
                 </div>
             </div>
-            <p className={styles.summary}>{summary}</p>
+            <p className={styles.summary}>
+                {summary.length >= SUMMARY_LENGTH
+                    ? summary.slice(0, SUMMARY_LENGTH) + ' [...]'
+                    : summary}
+            </p>
         </div>
     )
 }
