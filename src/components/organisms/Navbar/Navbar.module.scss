@@ -5,7 +5,8 @@
     $height: 100vh;
     @extend %flex-column;
 
-    position: fixed;
+    position: sticky;
+    top: 0;
     background-color: vars.$bg-dark;
     border-right: 1px;
     width: vars.$navbar-width;

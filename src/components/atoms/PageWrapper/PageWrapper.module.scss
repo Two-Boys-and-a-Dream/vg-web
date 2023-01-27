@@ -1,7 +1,6 @@
 @use '/src/styles/vars';
 
 .wrapper {
-    width: vars.$page-width;
-    margin-left: vars.$navbar-width;
+    max-width: vars.$page-width;
     padding: vars.$page-padding;
 }
