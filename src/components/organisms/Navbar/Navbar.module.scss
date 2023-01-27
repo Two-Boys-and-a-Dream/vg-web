@@ -24,6 +24,7 @@
 .navLinks {
     @extend %flex-column;
     gap: 0.25rem;
+    font-weight: 100;
 }
 
 .navNews {
