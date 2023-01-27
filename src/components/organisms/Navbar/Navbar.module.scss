@@ -6,8 +6,9 @@
     @extend %flex-column;
 
     position: fixed;
+    right: 0;
     background-color: vars.$bg-dark;
-    border-right: 1px;
+    border-left: 3px solid vars.$text-light;
     width: vars.$navbar-width;
     max-width: vars.$navbar-width;
     height: $height;
