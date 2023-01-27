@@ -1,7 +1,10 @@
 // Sizes
 $navbar-width: 300px;
+$navbar-padding-sides: 2rem;
 $page-padding: 50px;
-$page-width: calc(100% - $navbar-width - ($page-padding * 2));
+$page-width: calc(
+    100% - $navbar-width - ($page-padding * 2) - $navbar-padding-sides
+);
 $ratingBoxSize: 50px;
 
 // Colors

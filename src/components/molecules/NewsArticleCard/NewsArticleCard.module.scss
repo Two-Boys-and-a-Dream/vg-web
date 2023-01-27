@@ -1,9 +1,6 @@
 .newsArticle {
-    $width: 250px;
-
-    background: lightgrey;
+    $width: 100%;
     width: $width;
-    max-width: $width;
 
     p {
         padding: 5px;
