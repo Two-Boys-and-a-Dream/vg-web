@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { QUERIES } from '../api'
 import { GamesPage, Home } from '../pages'
 import { getRouterBasename } from '../utils/utils'
-import { Layout } from './Layout/Layout'
+import { MainLayout, HomeLayout } from './Layouts'
 
 export function Router() {
     const basename = useMemo(getRouterBasename, [process.env.NODE_ENV])
@@ -11,8 +11,10 @@ export function Router() {
     return (
         <BrowserRouter basename={basename}>
             <Routes>
-                <Route element={<Layout />}>
+                <Route element={<HomeLayout />}>
                     <Route path="/" element={<Home />} />
+                </Route>
+                <Route element={<MainLayout />}>
                     <Route
                         path="new"
                         element={

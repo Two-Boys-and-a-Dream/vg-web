@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom'
-import { Navbar, PageWrapper } from '../../components'
-import * as styles from './Layout.module.scss'
+import { Navbar, PageWrapper } from '../../../components'
+import * as styles from './MainLayout.module.scss'
 
 /**
- * Main component used in @tanstack/react-router
- * This drives the layout of the whole page
+ * Main component used in react-router-dom
+ * This drives the layout of non-home pages
  */
-export function Layout() {
+export function MainLayout() {
     return (
         <div className={styles.layout}>
             <Navbar />
