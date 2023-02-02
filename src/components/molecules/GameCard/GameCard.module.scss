@@ -40,11 +40,17 @@ $spacing: 0.5rem;
 }
 
 .title {
-    @include mixins.ellipsis(24px, 1, 1);
+    @include mixins.ellipsis(24px, 1, 1.1);
+    @extend %font-lato;
+    font-weight: bold;
+}
+
+.date {
+    @extend %date-text;
 }
 
 .summary {
-    @include mixins.ellipsis(16px, 6);
+    @include mixins.ellipsis(16px, 7, 1.2);
 }
 
 // Classes & Vars for styles based on rating.

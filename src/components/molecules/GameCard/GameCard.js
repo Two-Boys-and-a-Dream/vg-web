@@ -66,7 +66,9 @@ export function GameCard({
                 <Rating ratingText={ratingText} bgColor={ratingStyle} />
                 <div className={styles.headText}>
                     <p className={styles.title}>{gameTitle}</p>
-                    <p>Date: {releaseDateText}</p>
+                    <p className={styles.date}>
+                        Release Date: {releaseDateText}
+                    </p>
                 </div>
             </div>
             <p className={styles.summary}>{summary}</p>

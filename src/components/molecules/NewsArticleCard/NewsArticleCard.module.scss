@@ -28,10 +28,7 @@ $text-margin: 5px;
 }
 
 .date {
-    @extend %font-lato-italic;
-    margin-top: $text-margin;
-    font-size: 12px;
-    color: vars.$color-lotion;
+    @extend %date-text;
 }
 
 .description {

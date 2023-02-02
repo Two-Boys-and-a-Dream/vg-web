@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 // Flex Selectors
 %flex-row {
     display: flex;
@@ -55,4 +57,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+%date-text {
+    @extend %font-lato-italic;
+    margin-top: 5px;
+    font-size: 12px;
+    color: vars.$color-lotion;
 }

@@ -7,10 +7,11 @@
     position: sticky;
     top: 0;
     background-color: vars.$bg-dark;
-    border-left: 1px;
+    border-left: 2px solid vars.$color-platinum;
     width: vars.$navbar-width;
     height: 100vh;
     padding: 40px;
+    box-shadow: -20px 4px 30px rgba(0, 0, 0, 0.26);
 
     h2 {
         @extend %font-inter;
