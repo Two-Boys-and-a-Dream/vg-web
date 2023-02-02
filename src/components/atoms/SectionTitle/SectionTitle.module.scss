@@ -1,4 +1,7 @@
+@use 'src/styles/placeholders';
+
 .sectionTitle {
-    font-size: 2.25rem;
-    font-weight: 600;
+    @extend %font-inter;
+    font-size: 36px;
+    text-transform: uppercase;
 }

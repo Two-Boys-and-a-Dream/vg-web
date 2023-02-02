@@ -2,5 +2,6 @@
 
 .wrapper {
     width: vars.$page-width;
-    padding: vars.$page-padding;
+    padding: (vars.$page-padding * 2) 0 (vars.$page-padding * 2)
+        vars.$page-padding;
 }

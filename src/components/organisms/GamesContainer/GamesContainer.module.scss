@@ -1,10 +1,12 @@
 @use 'src/styles/placeholders';
+@use 'src/styles/vars';
 
 .gamesContainer {
     @extend %flex-row;
 
     justify-content: space-evenly;
-    gap: 2rem;
+    gap: vars.$page-padding;
+    padding-right: vars.$page-padding;
 }
 
 .gamesWrap {

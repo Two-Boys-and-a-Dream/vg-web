@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { ScrollContainer, SectionTitle } from '../../atoms'
 import pt from 'prop-types'
 import styles from './ScrollSection.module.scss'
@@ -7,18 +6,10 @@ import styles from './ScrollSection.module.scss'
  * Combines the horizontal scroll container, and the title/link above it.
  * Provide linkPath to render optional link.
  */
-export function ScrollSection({
-    title = 'Default Title',
-    linkPath,
-    linkText = 'See All',
-    children,
-}) {
+export function ScrollSection({ title = 'Default Title', children }) {
     return (
         <div className={styles.scrollSection}>
-            <div className={styles.scrollHead}>
-                <SectionTitle>{title}</SectionTitle>
-                {linkPath ? <Link to={linkPath}>{linkText}</Link> : null}
-            </div>
+            <SectionTitle>{title}</SectionTitle>
 
             <ScrollContainer>{children}</ScrollContainer>
         </div>
@@ -28,6 +19,4 @@ export function ScrollSection({
 ScrollSection.propTypes = {
     title: pt.string,
     children: pt.node,
-    linkPath: pt.string,
-    linkText: pt.string,
 }
