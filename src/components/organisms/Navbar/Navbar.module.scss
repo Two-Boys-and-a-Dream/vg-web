@@ -1,24 +1,20 @@
 @use 'src/styles/vars';
 @use 'src/styles/placeholders';
 
-$standard-padding: 1rem 0;
-$standard-rem: 0.75rem;
-$header-size: 28px;
-
 .navbar {
     @extend %flex-column;
 
     position: sticky;
     top: 0;
     background-color: vars.$bg-dark;
-    border-right: 1px;
+    border-left: 1px;
     width: vars.$navbar-width;
     height: 100vh;
     padding: 40px;
 
     h2 {
         @extend %font-inter;
-        font-size: $header-size;
+        font-size: 28px;
         color: vars.$color-lotion;
         padding: 8px 0;
     }
@@ -30,8 +26,8 @@ $header-size: 28px;
 
 .navLinks {
     @extend %flex-column;
-    padding: $standard-padding;
-    gap: $standard-rem;
+    padding: 1rem 0;
+    gap: 0.75rem;
 
     p {
         @extend %font-inter;
@@ -46,4 +42,14 @@ $header-size: 28px;
     @extend %overflow-column;
     height: 100%;
     gap: 30px;
+}
+
+.seeMoreLink {
+    @extend %font-inter;
+    padding: 8px 16px;
+    align-self: flex-end;
+    background-color: vars.$color-ripe-mango;
+    border: none;
+    color: vars.$color-raisin-black;
+    font-size: 20px;
 }

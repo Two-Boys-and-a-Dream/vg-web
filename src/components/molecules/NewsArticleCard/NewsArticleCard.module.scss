@@ -1,5 +1,6 @@
 @use 'src/styles/placeholders';
 @use 'src/styles/vars';
+@use 'src/styles/mixins';
 
 $text-margin: 5px;
 
@@ -17,14 +18,13 @@ $text-margin: 5px;
 
     div {
         width: 50%;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 }
 
 .title {
+    @include mixins.ellipsis(20px);
     @extend %font-inter;
-    font-size: 20px;
+    color: vars.$color-lotion;
 }
 
 .date {
@@ -35,24 +35,10 @@ $text-margin: 5px;
 }
 
 .description {
-    // Ellipsis information
-    // @see https://stackoverflow.com/a/21018009
-    $font-size: 16px;
-    $line-height: 1.4;
-    $lines-to-show: 4;
-    display: block; /* Fallback for non-webkit */
-    display: -webkit-box;
-    max-width: 400px;
-    height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
-    margin: 0 auto;
-    font-size: $font-size;
-    line-height: $line-height;
-    -webkit-line-clamp: $lines-to-show;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @include mixins.ellipsis;
 
     // Our styles
     @extend %font-lato;
     margin-top: $text-margin;
+    color: vars.$color-lotion;
 }

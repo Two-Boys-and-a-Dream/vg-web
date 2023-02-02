@@ -42,6 +42,7 @@ export function Router() {
                             />
                         }
                     />
+                    <Route path="news" element={<p>News goes here</p>} />
                 </Route>
             </Routes>
         </BrowserRouter>

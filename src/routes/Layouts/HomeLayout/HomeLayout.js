@@ -11,10 +11,10 @@ export function HomeLayout() {
         <div>
             <Hero />
             <div className={styles.layout}>
-                <Navbar />
                 <PageWrapper>
                     <Outlet />
                 </PageWrapper>
+                <Navbar />
             </div>
         </div>
     )

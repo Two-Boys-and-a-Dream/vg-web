@@ -1,5 +1,7 @@
-import pt from 'prop-types'
+import { useMemo } from 'react'
+import { rfcToHumanDate } from '../../../utils'
 import styles from './NewsArticleCard.module.scss'
+import pt from 'prop-types'
 
 export function NewsArticleCard({
     title = 'We gotta save John Wic from Fortnite',
@@ -8,6 +10,8 @@ export function NewsArticleCard({
     date,
     link,
 }) {
+    const formattedDate = useMemo(() => rfcToHumanDate(date), [date])
+
     return (
         <a
             href={link}
@@ -22,7 +26,7 @@ export function NewsArticleCard({
 
             <div>
                 <p className={styles.title}>{title}</p>
-                <p className={styles.date}>Date: {date}</p>
+                <p className={styles.date}>Date: {formattedDate}</p>
                 <p className={styles.description}>{description}</p>
             </div>
         </a>

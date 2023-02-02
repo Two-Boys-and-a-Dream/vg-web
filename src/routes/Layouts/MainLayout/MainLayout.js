@@ -9,10 +9,10 @@ import * as styles from './MainLayout.module.scss'
 export function MainLayout() {
     return (
         <div className={styles.layout}>
-            <Navbar />
             <PageWrapper>
                 <Outlet />
             </PageWrapper>
+            <Navbar />
         </div>
     )
 }

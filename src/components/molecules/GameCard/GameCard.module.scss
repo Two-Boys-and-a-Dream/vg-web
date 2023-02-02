@@ -1,30 +1,22 @@
 @use 'src/styles/vars';
 @use 'src/styles/placeholders';
+@use 'src/styles/mixins';
 
-$cardPadding: 0.5rem;
-$sideBarSize: 0.5rem;
+$spacing: 0.5rem;
 
 .gameCard {
-    $width: 275px;
-    $height: 475px;
     @extend %flex-column;
-    gap: 0.5rem;
-    padding: $cardPadding;
-    border-radius: 0.5rem;
-    width: $width;
-    max-width: $width;
-    height: $height;
-    max-height: $height;
+    gap: $spacing;
+    padding: $spacing;
+    border-radius: $spacing;
+    width: 275px;
+    height: 475px;
     background: vars.$bg-dark-lightest;
 }
 
 .gameImgContainer {
-    $height: 250px; // 187px half image height
-    $width: 175px; // 132px half image width
-    width: $width;
-    max-width: $width;
-    height: $height;
-    max-height: $height;
+    width: 175px; // 132px half image width
+    height: 250px; // 187px half image height
 
     img {
         border-radius: 5px;
@@ -38,25 +30,21 @@ $sideBarSize: 0.5rem;
 .gameCardHead {
     @extend %flex-row;
     align-items: center;
-    gap: 0.5rem;
+    gap: $spacing;
 }
 
 .headText {
     @extend %flex-column;
+    justify-content: space-around;
+    height: 100%;
+}
 
-    width: calc(
-        100% - #{$cardPadding} - #{$sideBarSize} - #{vars.$ratingBoxSize}
-    );
-    h2 {
-        @extend %text-ellipsis;
-        font-size: 1.25rem;
-    }
+.title {
+    @include mixins.ellipsis(24px, 1, 1);
 }
 
 .summary {
-    overflow: hidden;
-    width: available;
-    height: 175px;
+    @include mixins.ellipsis(16px, 6);
 }
 
 // Classes & Vars for styles based on rating.
@@ -64,6 +52,7 @@ $high: vars.$color-ufo-green;
 $mid: vars.$color-orange;
 $low: vars.$color-carmine-pink;
 $noRating: #7e8aa9;
+$sideBarSize: 0.5rem;
 
 @mixin sideBar($color: $noRating) {
     border-left: $sideBarSize solid $color;

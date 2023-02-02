@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { NewsContainer } from '../NewsContainer/NewsContainer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons'
 import * as styles from './Navbar.module.scss'
 
 const links = [
@@ -36,6 +38,10 @@ export function Navbar() {
             <h2>News</h2>
             <div className={styles.navNews}>
                 <NewsContainer />
+                <Link to="news" className={styles.seeMoreLink}>
+                    SEE MORE{' '}
+                    <FontAwesomeIcon icon={faCircleArrowRight} size="sm" />
+                </Link>
             </div>
         </nav>
     )

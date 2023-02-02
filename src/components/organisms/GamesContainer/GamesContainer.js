@@ -87,9 +87,10 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_PAGINATED }) {
                                     id,
                                     summary,
                                 }) => {
+                                    // TODO: This is NOT the newest date. These aren't sorted.
                                     const newestDate =
                                         releaseDates[releaseDates.length - 1]
-                                            .human
+                                            .date
 
                                     return (
                                         <GameCard

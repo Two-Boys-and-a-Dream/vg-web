@@ -17,7 +17,6 @@ export function NewsContainer() {
             {limitedArticles?.map((article) => (
                 <NewsArticleCard key={article._id} {...article} />
             ))}
-            <button>See More</button>
         </>
     )
 }
