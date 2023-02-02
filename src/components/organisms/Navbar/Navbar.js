@@ -4,19 +4,19 @@ import * as styles from './Navbar.module.scss'
 
 const links = [
     {
-        label: 'Home',
+        label: 'HOME',
         path: '/',
     },
     {
-        label: 'New',
+        label: 'NEW',
         path: '/new',
     },
     {
-        label: 'Upcoming',
+        label: 'UPCOMING',
         path: '/upcoming',
     },
     {
-        label: 'Popular',
+        label: 'POPULAR',
         path: '/popular',
     },
 ]
@@ -24,7 +24,7 @@ const links = [
 export function Navbar() {
     return (
         <nav className={styles.navbar} data-testid="navbar">
-            <h2 className={styles.navHead}>Video Gaming</h2>
+            <h2 className={styles.navHead}>THE LATEST</h2>
             <div className={styles.navLinks}>
                 {links.map(({ label, path }) => (
                     <Link key={path} to={path}>
@@ -33,8 +33,8 @@ export function Navbar() {
                 ))}
             </div>
 
+            <h2>News</h2>
             <div className={styles.navNews}>
-                <h2 className={styles.navNewsHead}>News</h2>
                 <NewsContainer />
             </div>
         </nav>
