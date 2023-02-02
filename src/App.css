@@ -2,12 +2,15 @@
 
 html,
 body {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: #262626;
     color: #e1e1e1;
     font-family: 'Lato', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 h2,

@@ -1,0 +1,39 @@
+@use 'src/styles/vars';
+@use 'src/styles/placeholders';
+
+$imagePath: '../../../assets/hero.jpg';
+
+%text {
+    @extend %font-inter;
+    font-size: 120px;
+    color: vars.$color-raisin-black;
+}
+
+.container {
+    @extend %flex-column;
+    height: 100vh;
+    padding: 0 vars.$hero-padding;
+    justify-content: center;
+    background-image: url($imagePath);
+
+    // Mobile sizing requirements
+    background-position: 40% 140%;
+    background-size: auto 180vh;
+
+    // Tablets +
+    @media screen and (min-width: 768px) {
+        background-size: auto;
+        background-position: 20% 70%;
+        // Double the horizontal padding for big screens
+        padding: 0 vars.$hero-padding * 2;
+    }
+}
+
+.mainText {
+    @extend %text;
+}
+
+.bold {
+    @extend %text;
+    font-weight: bold;
+}
