@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom'
-import { Navbar, PageWrapper } from '../../../components'
+import { Outlet, useLocation, ScrollRestoration } from 'react-router-dom'
+import { Navbar, PageWrapper, Hero } from '../../../components'
 import * as styles from './MainLayout.module.scss'
 
 /**
@@ -7,12 +7,24 @@ import * as styles from './MainLayout.module.scss'
  * This drives the layout of non-home pages
  */
 export function MainLayout() {
+    const { pathname } = useLocation()
+
     return (
-        <div className={styles.layout}>
-            <PageWrapper>
-                <Outlet />
-            </PageWrapper>
-            <Navbar />
+        <div>
+            <ScrollRestoration
+                getKey={(location) => {
+                    return location.pathname
+                }}
+            />
+
+            {pathname === '/' ? <Hero /> : null}
+
+            <div className={styles.layout}>
+                <PageWrapper>
+                    <Outlet />
+                </PageWrapper>
+                <Navbar />
+            </div>
         </div>
     )
 }
