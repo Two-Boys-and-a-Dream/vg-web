@@ -21,7 +21,7 @@ describe('<ScrollCategory />', () => {
         const { getByText } = renderWithClient(<ScrollCategory />)
 
         await waitFor(() => {
-            expect(getByText('1/22/23')).toBeDefined()
+            expect(getByText('Release Date: 2/4/2023')).toBeDefined()
         })
     })
 })

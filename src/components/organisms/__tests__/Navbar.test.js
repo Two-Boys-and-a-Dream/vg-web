@@ -3,6 +3,7 @@ import { Navbar } from '../'
 import { FAKE_NEWS } from '../../../data/dummy-data'
 import { renderWithClient } from '../../../utils/testUtils'
 import axios from 'axios'
+import { BrowserRouter } from 'react-router-dom'
 
 beforeEach(() => {
     axios.get.mockResolvedValue({ data: FAKE_NEWS })
@@ -10,7 +11,11 @@ beforeEach(() => {
 
 describe('<Navbar />', () => {
     it('renders', async () => {
-        const { getByTestId, getByText } = renderWithClient(<Navbar />)
+        const { getByTestId, getByText } = renderWithClient(
+            <BrowserRouter>
+                <Navbar />
+            </BrowserRouter>
+        )
 
         await waitFor(() => {
             expect(getByTestId('navbar')).toBeDefined()
