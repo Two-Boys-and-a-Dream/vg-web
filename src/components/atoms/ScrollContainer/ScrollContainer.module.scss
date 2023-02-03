@@ -5,6 +5,7 @@
     @extend %flex-row;
     @extend %overflow-row;
     padding-bottom: vars.$spacing;
+    scrollbar-width: thin;
 }
 
 .vertical {
@@ -12,4 +13,5 @@
     @extend %overflow-column;
     gap: 2rem;
     padding-right: vars.$spacing;
+    scrollbar-width: thin;
 }
