@@ -1,9 +1,10 @@
 // Sizes
-$navbar-width: 300px;
+$navbar-width: 480px;
 $page-width: calc(100% - $navbar-width);
-$page-padding: 50px;
+$page-padding: 64px;
 $ratingBoxSize: 50px;
 $hero-padding: 3rem;
+$spacing: 1rem;
 
 // Colors
 // Got these color names from https://www.color-name.com/hex.
@@ -14,7 +15,11 @@ $color-solid-black: #171717;
 $color-raisin-black: #262626;
 $color-black-olive: #404040;
 $color-chinese-white: #e1e1e1;
+$color-platinum: #e5e5e5;
+$color-lotion: #fafafa;
+$color-pure-white: #ffffff;
 $color-gunmetal: #28343f;
+$color-ripe-mango: #fbbf24;
 
 // Colors - Background & Text
 $bg-dark-lightest: $color-black-olive;

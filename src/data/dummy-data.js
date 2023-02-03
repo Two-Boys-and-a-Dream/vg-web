@@ -8,7 +8,7 @@ export const FAKE_GAMES = {
             id: '1',
             name: 'Some Game',
             total_rating: 58,
-            release_dates: [{ human: '12/22/22' }],
+            release_dates: [{ date: 1675296000 }],
             cover: { image_id: 'testImg' },
             summary: 'long test summary',
         },
@@ -16,7 +16,7 @@ export const FAKE_GAMES = {
             id: '2',
             name: 'Some Other Game',
             total_rating: 84.8,
-            release_dates: [{ human: '12/24/22' }, { human: '1/22/23' }],
+            release_dates: [{ date: 1675320000 }, { date: 1675490000 }],
             cover: { image_id: 'testImg' },
             summary: 'long test summary 2',
         },
@@ -52,7 +52,9 @@ export const FAKE_NEWS = [
     {
         _id: '1',
         title: 'article one',
+        description: 'one long description',
         link: 'somewhere.test.com',
         image: '//someUri',
+        date: 'Fri, 13 Jan 2023 21:50:13 +0000',
     },
 ]

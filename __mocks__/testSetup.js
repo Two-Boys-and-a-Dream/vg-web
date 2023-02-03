@@ -6,16 +6,19 @@ jest.mock('react-router-dom', () => {
     const actual = jest.requireActual('react-router-dom')
     const mocked = jest.createMockFromModule('react-router-dom')
 
-    // Make link just pass through
-    function Link({ children }) {
+    // Make link & scrollrestoration just pass through
+    function Passthrough({ children, getKey }) {
+        if (getKey) getKey()
         return children
     }
 
     return {
         ...actual,
-        Link,
+        Link: Passthrough,
         RouterProvider: mocked.RouterProvider,
         Outlet: mocked.Outlet,
+        useLocation: jest.fn().mockReturnValue({ pathname: '/' }),
+        ScrollRestoration: Passthrough,
     }
 })
 

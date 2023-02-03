@@ -1,7 +1,7 @@
 @use 'src/styles/placeholders';
 @use 'src/styles/vars';
 
-.scrollSection {
+.container {
     @extend %flex-column;
-    margin-top: vars.$page-padding;
+    gap: vars.$page-padding;
 }

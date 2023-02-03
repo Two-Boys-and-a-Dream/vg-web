@@ -2,42 +2,63 @@
 @use 'src/styles/placeholders';
 
 .navbar {
-    $height: 100vh;
     @extend %flex-column;
 
     position: sticky;
     top: 0;
     background-color: vars.$bg-dark;
-    border-right: 1px;
+    border-left: 2px solid vars.$color-platinum;
     width: vars.$navbar-width;
-    max-width: vars.$navbar-width;
-    height: $height;
-    max-height: $height;
+    height: 100vh;
+    padding: vars.$page-padding;
+    box-shadow: -20px 4px 30px rgba(0, 0, 0, 0.26);
+
+    h2 {
+        @extend %font-inter;
+        font-size: 28px;
+        color: vars.$color-lotion;
+        padding: 8px 0;
+    }
 }
 
 .navHead {
-    font-size: 1.75rem;
-    border-bottom: 2px solid black;
-    text-align: center;
-    padding: 2rem;
+    border-bottom: 1px solid vars.$color-lotion;
 }
 
 .navLinks {
     @extend %flex-column;
-    padding: 1rem;
+    padding: 1rem 0;
     gap: 0.75rem;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+%link {
+    @extend %font-inter;
+    font-weight: 200;
+    font-size: 20px;
+    color: vars.$color-pure-white;
+}
+
+.inactiveLink {
+    @extend %link;
+}
+
+.activeLink {
+    @extend %link;
+    font-weight: 700;
 }
 
 .navNews {
     @extend %flex-column;
     @extend %overflow-column;
-    padding: 1rem;
-    gap: 1rem;
-    flex-grow: 1;
-    align-items: flex-start;
+    height: 100%;
+    gap: 60px;
 }
 
-.navNewsHead {
-    font-size: 1.6rem;
-    font-weight: 600;
+.seeMoreLink {
+    @extend %base-button;
+    align-self: flex-end;
 }

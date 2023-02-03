@@ -1,16 +1,17 @@
 @use 'src/styles/placeholders';
-
-$spacing: 0.95rem;
+@use 'src/styles/vars';
 
 .horizontal {
     @extend %flex-row;
     @extend %overflow-row;
-    padding: $spacing 0;
+    padding-bottom: vars.$spacing;
+    scrollbar-width: thin;
 }
 
 .vertical {
     @extend %flex-column;
     @extend %overflow-column;
     gap: 2rem;
-    padding: 0 $spacing 0 0;
+    padding-right: vars.$spacing;
+    scrollbar-width: thin;
 }

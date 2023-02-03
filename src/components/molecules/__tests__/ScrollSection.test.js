@@ -7,11 +7,4 @@ describe('<ScrollSection />', () => {
 
         expect(root).toBeDefined()
     })
-    it('renders optional link', () => {
-        const { getByText } = render(
-            <ScrollSection linkPath="somewhere" linkText="Take Me" />
-        )
-
-        expect(getByText('Take Me')).toBeDefined()
-    })
 })

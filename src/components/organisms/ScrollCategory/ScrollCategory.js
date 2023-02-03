@@ -7,9 +7,9 @@ import pt from 'prop-types'
  * Provide queryName to hook into a query key.
  * @see {@link queries.js}
  */
-export function ScrollCategory({ title = 'Games', linkPath, queryName }) {
+export function ScrollCategory({ title = 'Games', queryName }) {
     return (
-        <ScrollSection title={title} linkPath={linkPath}>
+        <ScrollSection title={title}>
             <GamesContainer queryName={queryName} />
         </ScrollSection>
     )
@@ -17,6 +17,5 @@ export function ScrollCategory({ title = 'Games', linkPath, queryName }) {
 
 ScrollCategory.propTypes = {
     title: pt.string,
-    linkPath: pt.string,
     queryName: pt.string,
 }

@@ -4,11 +4,11 @@ import * as styles from './SectionTitle.module.scss'
 /**
  * The header/title used above different sections.
  */
-export function SectionTitle({ children = 'Section Title' }) {
+export function SectionTitle({ children = 'Section Title', ...rest }) {
     return (
-        <div>
-            <h2 className={styles.sectionTitle}>{children}</h2>
-        </div>
+        <h2 className={styles.sectionTitle} {...rest}>
+            {children}
+        </h2>
     )
 }
 

@@ -1,5 +1,5 @@
 import pt from 'prop-types'
-import { constructImgURL } from '../../../utils'
+import { constructImgURL, unixToHumanDate } from '../../../utils'
 import { Rating } from '../../atoms'
 import * as styles from './GameCard.module.scss'
 import { useMemo } from 'react'
@@ -12,8 +12,15 @@ export function GameCard({
     summary = 'Missing summary data',
     rating,
     gameTitle = 'Omega Long Game Title',
-    releaseDate = '12/22/22',
+    releaseDate = 'N/A',
 }) {
+    const releaseDateText = useMemo(
+        () =>
+            typeof releaseDate === 'number'
+                ? unixToHumanDate(releaseDate)
+                : releaseDate,
+        [releaseDate]
+    )
     const ratingText = useMemo(
         () => (typeof rating === 'number' ? Math.round(rating) : rating),
         [rating]
@@ -44,14 +51,6 @@ export function GameCard({
         }
     }, [rating])
 
-    const trimmedSummary = useMemo(() => {
-        const SUMMARY_LENGTH = 275
-
-        return summary.length >= SUMMARY_LENGTH
-            ? summary.slice(0, SUMMARY_LENGTH) + ' [...]'
-            : summary
-    }, [summary])
-
     return (
         <div
             data-testid="game-card"
@@ -66,11 +65,13 @@ export function GameCard({
             <div className={styles.gameCardHead}>
                 <Rating ratingText={ratingText} bgColor={ratingStyle} />
                 <div className={styles.headText}>
-                    <h2>{gameTitle}</h2>
-                    <p>{releaseDate}</p>
+                    <p className={styles.title}>{gameTitle}</p>
+                    <p className={styles.date}>
+                        Release Date: {releaseDateText}
+                    </p>
                 </div>
             </div>
-            <p className={styles.summary}>{trimmedSummary}</p>
+            <p className={styles.summary}>{summary}</p>
         </div>
     )
 }
@@ -80,5 +81,5 @@ GameCard.propTypes = {
     summary: pt.string,
     rating: pt.oneOfType([pt.string, pt.number]),
     gameTitle: pt.string,
-    releaseDate: pt.string,
+    releaseDate: pt.oneOfType([pt.string, pt.number]),
 }

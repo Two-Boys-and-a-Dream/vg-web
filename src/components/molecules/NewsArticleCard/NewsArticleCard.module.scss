@@ -1,17 +1,39 @@
+@use 'src/styles/placeholders';
+@use 'src/styles/vars';
+@use 'src/styles/mixins';
+
 .newsArticle {
-    $width: 250px;
-
-    background: lightgrey;
-    width: $width;
-    max-width: $width;
-
-    p {
-        padding: 5px;
-        font-weight: 600;
-    }
+    @extend %flex-row;
+    height: 230px;
+    gap: 8px;
+    overflow: hidden;
 
     img {
         width: 100%;
-        object-fit: fill;
+        height: 100%;
+        object-fit: cover;
     }
+
+    div {
+        width: 50%;
+    }
+}
+
+.title {
+    @include mixins.ellipsis(20px);
+    @extend %font-inter;
+    color: vars.$color-lotion;
+}
+
+.date {
+    @extend %date-text;
+}
+
+.description {
+    @include mixins.ellipsis(16px, 4);
+
+    // Our styles
+    @extend %font-lato;
+    margin-top: vars.$spacing;
+    color: vars.$color-lotion;
 }

@@ -2,7 +2,7 @@ import { Fragment, useEffect, useMemo } from 'react'
 import { useInfiniteQuery } from 'react-query'
 import { QUERY, QUERIES } from '../../../api'
 import { GameCard } from '../../molecules'
-import { Loader } from '../../atoms'
+import { Button, Loader } from '../../atoms'
 import pt from 'prop-types'
 import * as styles from './GamesContainer.module.scss'
 
@@ -87,9 +87,10 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_PAGINATED }) {
                                     id,
                                     summary,
                                 }) => {
+                                    // TODO: This is NOT the newest date. These aren't sorted.
                                     const newestDate =
                                         releaseDates[releaseDates.length - 1]
-                                            .human
+                                            .date
 
                                     return (
                                         <GameCard
@@ -109,12 +110,14 @@ export function GamesContainer({ queryName = QUERIES.NEW_GAMES_PAGINATED }) {
 
                 {/* Hides the fetch next page button on non-paginated queries */}
                 {isPaginated ? (
-                    <button
-                        onClick={fetchNext}
-                        disabled={!hasNextPage || isFetchingNextPage}
-                    >
-                        {buttonText}
-                    </button>
+                    <div className={styles.buttonContainer}>
+                        <Button
+                            onClick={fetchNext}
+                            disabled={!hasNextPage || isFetchingNextPage}
+                        >
+                            {buttonText}
+                        </Button>
+                    </div>
                 ) : null}
             </>
         )

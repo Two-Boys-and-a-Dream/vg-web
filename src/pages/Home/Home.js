@@ -1,24 +1,22 @@
 import { QUERIES } from '../../api'
 import { ScrollCategory } from '../../components'
+import * as styles from './Home.module.scss'
 
 export function Home() {
     return (
-        <>
+        <div className={styles.container}>
             <ScrollCategory
                 title="New Releases"
-                linkPath="new"
                 queryName={QUERIES.NEW_GAMES_LIGHT}
             />
             <ScrollCategory
-                title="Popular Games"
-                linkPath="popular"
-                queryName={QUERIES.POPULAR_GAMES_LIGHT}
-            />
-            <ScrollCategory
-                title="Upcoming Games"
-                linkPath="upcoming"
+                title="Upcoming"
                 queryName={QUERIES.UPCOMING_GAMES_LIGHT}
             />
-        </>
+            <ScrollCategory
+                title="Popular"
+                queryName={QUERIES.POPULAR_GAMES_LIGHT}
+            />
+        </div>
     )
 }
