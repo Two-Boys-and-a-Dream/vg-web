@@ -1,0 +1,10 @@
+@use 'src/styles/placeholders';
+
+.container {
+    @extend %base-button;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

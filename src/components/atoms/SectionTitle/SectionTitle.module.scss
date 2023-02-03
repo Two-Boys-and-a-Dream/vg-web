@@ -1,7 +1,9 @@
 @use 'src/styles/placeholders';
+@use 'src/styles/vars';
 
 .sectionTitle {
     @extend %font-inter;
     font-size: 36px;
     text-transform: uppercase;
+    margin-bottom: vars.$spacing;
 }

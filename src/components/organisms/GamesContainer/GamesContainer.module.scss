@@ -11,4 +11,10 @@
 
 .gamesWrap {
     @extend %wrap;
+    justify-content: space-between;
+}
+
+.buttonContainer {
+    align-self: center;
+    margin-top: vars.$page-padding;
 }

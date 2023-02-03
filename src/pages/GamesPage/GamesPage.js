@@ -1,4 +1,4 @@
-import { GamesContainer } from '../../components'
+import { GamesContainer, SectionTitle } from '../../components'
 import * as styles from './GamesPage.module.scss'
 import pt from 'prop-types'
 
@@ -10,7 +10,7 @@ import pt from 'prop-types'
 export function GamesPage({ title = 'Missing Page Title', queryName }) {
     return (
         <div className={styles.gamePage}>
-            <h2 className={styles.pageTitle}>{title}</h2>
+            <SectionTitle>{title}</SectionTitle>
             <GamesContainer queryName={queryName} />
         </div>
     )

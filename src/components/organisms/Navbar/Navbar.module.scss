@@ -30,12 +30,25 @@
     padding: 1rem 0;
     gap: 0.75rem;
 
-    p {
-        @extend %font-inter;
-        font-weight: 200;
-        font-size: 20px;
-        color: vars.$color-pure-white;
+    li {
+        list-style-type: none;
     }
+}
+
+%link {
+    @extend %font-inter;
+    font-weight: 200;
+    font-size: 20px;
+    color: vars.$color-pure-white;
+}
+
+.inactiveLink {
+    @extend %link;
+}
+
+.activeLink {
+    @extend %link;
+    font-weight: 700;
 }
 
 .navNews {
@@ -46,11 +59,6 @@
 }
 
 .seeMoreLink {
-    @extend %font-inter;
-    padding: 8px 16px;
+    @extend %base-button;
     align-self: flex-end;
-    background-color: vars.$color-ripe-mango;
-    border: none;
-    color: vars.$color-raisin-black;
-    font-size: 20px;
 }

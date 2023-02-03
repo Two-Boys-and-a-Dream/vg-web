@@ -2,8 +2,6 @@
 @use 'src/styles/vars';
 @use 'src/styles/mixins';
 
-$text-margin: 5px;
-
 .newsArticle {
     @extend %flex-row;
     height: 230px;
@@ -32,10 +30,10 @@ $text-margin: 5px;
 }
 
 .description {
-    @include mixins.ellipsis;
+    @include mixins.ellipsis(16px, 4);
 
     // Our styles
     @extend %font-lato;
-    margin-top: $text-margin;
+    margin-top: vars.$spacing;
     color: vars.$color-lotion;
 }

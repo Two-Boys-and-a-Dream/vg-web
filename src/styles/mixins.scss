@@ -1,6 +1,6 @@
 // Ellipsis information
 // @see https://stackoverflow.com/a/21018009
-@mixin ellipsis($font-size: 16px, $lines-to-show: 4, $line-height: 1.4) {
+@mixin ellipsis($font-size: 16px, $lines-to-show: 4, $line-height: 1.2) {
     display: block; /* Fallback for non-webkit */
     display: -webkit-box;
     max-width: 400px;

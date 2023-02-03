@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { NewsContainer } from '../NewsContainer/NewsContainer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons'
@@ -27,13 +27,22 @@ export function Navbar() {
     return (
         <nav className={styles.navbar} data-testid="navbar">
             <h2 className={styles.navHead}>THE LATEST</h2>
-            <div className={styles.navLinks}>
+            <ul className={styles.navLinks}>
                 {links.map(({ label, path }) => (
-                    <Link key={path} to={path}>
-                        <p>{label}</p>
-                    </Link>
+                    <li key={path}>
+                        <NavLink
+                            to={path}
+                            className={({ isActive }) =>
+                                isActive
+                                    ? styles.activeLink
+                                    : styles.inactiveLink
+                            }
+                        >
+                            {label}
+                        </NavLink>
+                    </li>
                 ))}
-            </div>
+            </ul>
 
             <h2>News</h2>
             <div className={styles.navNews}>
