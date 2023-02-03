@@ -11,12 +11,9 @@ export function MainLayout() {
 
     return (
         <div>
-            <ScrollRestoration
-                getKey={(location) => {
-                    return location.pathname
-                }}
-            />
+            <ScrollRestoration getKey={(location) => location?.pathname} />
 
+            {/* Render Hero component on root path */}
             {pathname === '/' ? <Hero /> : null}
 
             <div className={styles.layout}>

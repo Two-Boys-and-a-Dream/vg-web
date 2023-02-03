@@ -10,7 +10,10 @@ export function NewsArticleCard({
     date,
     link,
 }) {
-    const formattedDate = useMemo(() => rfcToHumanDate(date), [date])
+    const formattedDate = useMemo(
+        () => (date ? rfcToHumanDate(date) : 'N/A'),
+        [date]
+    )
 
     return (
         <a
