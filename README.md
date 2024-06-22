@@ -1,10 +1,5 @@
 # vg-web
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Two-Boys-and-a-Dream_vg-web&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Two-Boys-and-a-Dream_vg-web)
-
 ## Intro
 
 ![Video Games Central](./docs/vg-central.png)
@@ -37,7 +32,7 @@ npm i
 Create a new file in the root project named `.env.development`. Add the following:
 
 ```
-API_URL = https://vg-api-development.up.railway.app/
+API_URL = https://vg-api-production.up.railway.app/
 ```
 
 ## Running the project
